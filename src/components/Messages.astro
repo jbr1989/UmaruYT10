@@ -1,9 +1,6 @@
 ---
-const messages = [
-  { name: "Alex", text: "Gracias por tantos años de contenido increíble 🙌" },
-  { name: "Luna", text: "Tus análisis me inspiraron a leer más manga 💕" },
-  { name: "Kuro", text: "Por muchos años más de historias y pasión 😎" },
-];
+const messages = (await import("../data/message.json")).default;
+const shuffled = [...messages].sort(() => Math.random() - 0.5);
 ---
 
 <section class="p-6">
@@ -12,10 +9,10 @@ const messages = [
   </h2>
   <div class="grid md:grid-cols-3 gap-6">
     {
-      messages.map((msg) => (
-        <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_0_#000]">
-          <p class="mb-2">“{msg.text}”</p>
-          <p class="text-right font-bold">— {msg.name}</p>
+      shuffled.map((msg) => (
+        <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_0_#000] flex flex-col h-full">
+          <p class="mb-2">“ {msg.text} ”</p>
+          <p class="text-right font-bold mt-auto">— {msg.name}</p>
         </div>
       ))
     }

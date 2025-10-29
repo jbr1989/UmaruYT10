@@ -1,0 +1,23 @@
+---
+const messages = [
+  { name: "Alex", text: "Gracias por tantos años de contenido increíble 🙌" },
+  { name: "Luna", text: "Tus análisis me inspiraron a leer más manga 💕" },
+  { name: "Kuro", text: "Por muchos años más de historias y pasión 😎" },
+];
+---
+
+<section class="p-6">
+  <h2 class="text-3xl font-bold mb-4 border-b-4 border-black inline-block">
+    Mensajes de los fans
+  </h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    {
+      messages.map((msg) => (
+        <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_0_#000]">
+          <p class="mb-2">“{msg.text}”</p>
+          <p class="text-right font-bold">— {msg.name}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

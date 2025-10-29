@@ -2,62 +2,17 @@
 import "../styles/global.css";
 ---
 
-<html lang="es">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>10 años de manga</title>
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
   </head>
-  <body class="bg-white text-black font-mono overflow-hidden">
-    <!-- Contenedor general -->
-    <main class="relative h-screen w-full flex items-center justify-center">
-      <!-- Pantalla de apertura -->
-      <div
-        id="intro"
-        class="absolute inset-0 flex items-center justify-center bg-white border-8 border-black text-3xl font-bold text-center transition-opacity duration-1000 z-10"
-      >
-        <p id="intro-text" class="whitespace-pre-line"></p>
-      </div>
-
-      <!-- Contenido principal (oculto al principio) -->
-      <div
-        id="main-content"
-        class="opacity-0 transition-opacity duration-1000 text-center p-6"
-      >
-        <h1 class="text-4xl font-bold mb-4">🎉 10 años de manga 🎉</h1>
-        <p class="text-lg">Bienvenido al especial de aniversario del canal</p>
-      </div>
-    </main>
-
-    <!-- Script de apertura -->
-    <script>
-      const text = "Capítulo 10:\nUna década de pasión por el manga";
-      const intro = document.getElementById("intro");
-      const introText = document.getElementById("intro-text");
-      const mainContent = document.getElementById("main-content");
-
-      let i = 0;
-
-      function typeText() {
-        if (i < text.length) {
-          introText.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeText, 80); // velocidad de tipeo
-        } else {
-          // espera 2 segundos y hace fade out
-          setTimeout(() => {
-            intro.style.opacity = "0";
-            setTimeout(() => {
-              intro.style.display = "none";
-              mainContent.style.opacity = "1";
-            }, 1000); // coincide con el duration-1000 del fade
-          }, 2000);
-        }
-      }
-
-      window.addEventListener("DOMContentLoaded", typeText);
-    </script>
+  <body class="bg-white text-black font-mono">
+    <slot />
   </body>
 </html>
 

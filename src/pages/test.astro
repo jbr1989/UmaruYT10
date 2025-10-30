@@ -12,8 +12,8 @@ import Messages from "../components/Messages.astro";
     const card = document.getElementById("card");
 
     document.addEventListener("mousemove", (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 30; // rotación Y
-      const y = (e.clientY / window.innerHeight - 0.5) * -30; // rotación X
+      const x = (e.clientX / window.innerWidth - 0.5) * 40; // rotación Y (mayor rango)
+      const y = (e.clientY / window.innerHeight - 0.5) * -40; // rotación X (mayor rango)
       card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
     });
 
@@ -34,12 +34,14 @@ import Messages from "../components/Messages.astro";
     }
 
     .card {
-      width: 400px;
-      height: 550px;
-      background-image: url("/img/placa.png");
+      height: 600px;
+      max-height: 90vh;
+      aspect-ratio: 1/1.65;
+      /* height: 550px; */
+      background-image: url("/img/placa.webp");
       background-size: cover;
       background-position: center;
-      border-radius: 20px;
+      border-radius: 10px;
       transition: transform 0.1s;
       transform-style: preserve-3d;
       backface-visibility: hidden;

@@ -1,8 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Info from "../components/Info.astro";
 import Timeline from "../components/Timeline.astro";
 import VideoGallery from "../components/VideoGallery.astro";
 import Messages from "../components/Messages.astro";
+import Footer from "../layouts/components/Footer.astro";
 ---
 
 <Layout>
@@ -28,9 +30,13 @@ import Messages from "../components/Messages.astro";
         </p>
       </section>
 
+      <Info />
+
       <Timeline />
       <VideoGallery />
       <Messages />
+
+      <Footer />
     </div>
   </main>
 

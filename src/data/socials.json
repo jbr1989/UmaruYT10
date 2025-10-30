@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Youtube",
+    "url": "https://www.youtube.com/@UmaruYT",
+    "icon": "/img/social/youtube.webp"
+  },
+  {
+    "title": "Twitch",
+    "url": "https://www.twitch.tv/umaruyt",
+    "icon": "/img/social/twitch.webp"
+  },
+  {
+    "title": "Twitter",
+    "url": "https://twitter.com/Umaruyt",
+    "icon": "/img/social/twitter.webp"
+  },
+  {
+    "title": "Instagram",
+    "url": "https://www.instagram.com/umaruyt/",
+    "icon": "/img/social/instagram.webp"
+  },
+  {
+    "title": "TikTok",
+    "url": "https://www.tiktok.com/@umaru.yt",
+    "icon": "/img/social/tiktok.webp"
+  }
+]

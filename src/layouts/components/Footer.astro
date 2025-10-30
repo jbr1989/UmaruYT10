@@ -1,0 +1,16 @@
+---
+import SocialIcon from "../../components/social/SocialIcon.astro";
+
+const socials = (await import("../../data/socials.json")).default;
+---
+
+<footer
+  class="w-full px-6 py-3 bg-(--color-bg-footer) text-center shadow gap-4 items-center overflow-x-auto text-black"
+>
+  <p>¿Quieres ver más?</p>
+  <div id="social-icons" class="flex gap-6 items-center justify-center my-2">
+    {socials.map((social) => <SocialIcon {...social} />)}
+  </div>
+
+  <p>Hecho por Dizo con ❤️ para Umaru</p>
+</footer>

@@ -2,6 +2,7 @@
 import { formatNum } from "../utils";
 
 import Layout from "../layouts/Layout.astro";
+import Intro from "../components/intro.astro";
 import Cover from "../components/cover.astro";
 import Stats from "../components/stats.astro";
 import Videos from "../components/videos.astro";
@@ -24,27 +25,36 @@ const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
 
 <Layout>
   <main>
-    <!-- Portada -->
-    <Cover />
+    <Intro />
 
-    <!-- Stats -->
-    <Stats channel={channel} videos={videos} shorts={shorts} />
+    <!-- Contenido -->
+    <div
+      id="main-content"
+      style="display: none; opacity: 0;"
+      class="opacity-0 transition-opacity duration-1000"
+    >
+      <!-- Portada -->
+      <Cover />
 
-    <!-- Top Videos -->
-    <Videos videos={videos} />
+      <!-- Stats -->
+      <Stats channel={channel} videos={videos} shorts={shorts} />
 
-    <!-- Top Shorts -->
-    <Shorts shorts={shorts} />
+      <!-- Top Videos -->
+      <Videos videos={videos} />
 
-    <!-- Insights -->
-    <TimeLineList />
+      <!-- Top Shorts -->
+      <Shorts shorts={shorts} />
 
-    <!-- Insights -->
-    <Curiosidades videos={videos} shorts={shorts} />
+      <!-- Insights -->
+      <TimeLineList />
 
-    <Messages />
+      <!-- Insights -->
+      <Curiosidades videos={videos} shorts={shorts} />
 
-    <Footer />
+      <Messages />
+
+      <Footer />
+    </div>
   </main>
 
   <script>

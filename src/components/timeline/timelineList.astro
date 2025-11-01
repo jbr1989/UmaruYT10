@@ -6,35 +6,28 @@ import timeline from "../../data/timeline.json";
 
 <!-- Insights -->
 <section id="insights">
-
   <div class="container">
     <h2 class="text-2xl font-bold mb-3">⌛ Timeline</h2>
 
     <div class="timeline">
-      <ul class="list-disc pl-5 text-sm">
+      <ul class="list-disc text-sm">
         {timeline.map((t, i) => <TimeListItem t={t} />)}
       </ul>
     </div>
-
   </div>
-
 </section>
 
 <style is:inline>
-
   #insights {
     padding-block: 3em;
     background: #c3c0ff;
     min-height: 100vh;
     display: grid;
     align-items: center;
-    justify-content: center;
   }
 
   .timeline {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    width: min(900px, 100%);
     margin: 5% auto;
   }
   .timeline__event {
@@ -85,75 +78,10 @@ import timeline from "../../data/timeline.json";
     background: #007bff;
     color: white;
   }
-  /* .timeline__event__icon svg {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 50%;
-    left: -80px;
-    font-size: 2.5rem;
-    transform: translateY(-50%);
-  } */
   .timeline__event__description {
     flex-basis: 60%;
   }
-  /* .timeline__event:after {
-    content: "";
-    width: 2px;
-    height: 100%;
-    background: #ccc;
-    position: absolute;
-    top: 52%;
-    left: -3.5rem;
-    z-index: -1;
-  }
-  .timeline__event:before {
-    content: "";
-    width: 5rem;
-    height: 5rem;
-    position: absolute;
-    background: #ccc;
-    /* background: #f6a4ec; */
-    border-radius: 100%;
-    left: -6rem;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 2px solid #9251ac;
-  } */
-  .timeline__event--type2:before {
-    background: #87bbfe;
-    border-color: #555ac0;
-  }
-  .timeline__event--type2:after {
-    background: #555ac0;
-  }
-  .timeline__event--type2 .timeline__event__date {
-    color: #87bbfe;
-  }
-  .timeline__event--type2 .timeline__event__icon {
-    background: #555ac0;
-    color: #555ac0;
-  }
-  .timeline__event--type2 .timeline__event__title {
-    color: #555ac0;
-  }
-  .timeline__event--type3:before {
-    background: #aff1b6;
-    border-color: #24b47e;
-  }
-  .timeline__event--type3:after {
-    background: #24b47e;
-  }
-  .timeline__event--type3 .timeline__event__date {
-    color: #aff1b6;
-  }
-  .timeline__event--type3 .timeline__event__icon {
-    background: #24b47e;
-    color: #24b47e;
-  }
-  .timeline__event--type3 .timeline__event__title {
-    color: #24b47e;
-  }
+
   .timeline__event:last-child:after {
     content: none;
   }

@@ -1,0 +1,30 @@
+---
+import fs from "fs";
+
+const { t } = Astro.props;
+---
+
+<div class="timeline__event animated fadeInUp delay-3s timeline__event--type1">
+  <div class=`timeline__event__icon timeline__bg__${t.color}`>
+    <!-- <Fragment set:html={svg} /> -->
+    <div class="timeline__event__date">{t.year}</div>
+  </div>
+  <div class="timeline__event__content">
+    <div class="timeline__event__title">{t.text}</div>
+    <div class="timeline__event__description">
+      <p>
+        <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam
+        eveniet ut aliquam ab asperiores, accusamus iure veniam corporis
+        incidunt reprehenderit accusantium id aut architecto harum quidem
+        dolorem in! -->
+      </p>
+    </div>
+  </div>
+  <div
+    style="display:grid;background:black;align-content: center; cursor: pointer;"
+  >
+    <a href=`https://www.youtube.com/watch?v=${t.id}` target="_blank">
+      <img src={t.thumbnail} style="width:100%;height:auto;" />
+    </a>
+  </div>
+</div>

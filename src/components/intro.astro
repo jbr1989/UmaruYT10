@@ -1,0 +1,48 @@
+<div
+  id="intro"
+  class="absolute inset-0 flex items-center justify-center bg-white border-8 border-black text-3xl font-bold text-center transition-opacity duration-1000 z-10"
+>
+  <img src="/img/umaru_profile.webp" alt="UmaruYT" class="w-1/2 mx-auto" />
+
+  <p id="intro-text" class="whitespace-pre-line"></p>
+</div>
+
+<script>
+  const text = "Capítulo 10:\nUna década de pasión por el manga";
+  const intro = document.getElementById("intro");
+  const introText = document.getElementById("intro-text");
+  const mainContent = document.getElementById("main-content");
+  let i = 0;
+
+  function typeText() {
+    if (i < text.length) {
+      introText.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeText, 80);
+    } else {
+      setTimeout(() => {
+        // Fade out del intro
+        intro.style.opacity = "0";
+        setTimeout(() => {
+          intro.style.display = "none";
+          // Mostrar main-content
+          mainContent.style.display = "block";
+          setTimeout(() => {
+            mainContent.style.opacity = "1";
+          }, 50); // pequeño delay para activar la transición
+        }, 1000);
+      }, 2000);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", typeText);
+</script>
+
+<style>
+  #intro {
+    display: grid;
+  }
+  #intro-text {
+    height: 2em;
+  }
+</style>

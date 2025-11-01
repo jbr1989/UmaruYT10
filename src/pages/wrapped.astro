@@ -1,0 +1,249 @@
+---
+import channel from "../data/channel.json";
+import videos from "../data/videos.json"; // si es array total o solo largos
+import shorts from "../data/shorts.json";
+import timeline from "../data/timeline.json";
+import Layout from "../layouts/Layout.astro";
+
+function formatNum(n) {
+  return n?.toLocaleString?.() ?? String(n);
+}
+
+const topVideos = [...videos].sort((a, b) => b.views - a.views).slice(0, 6);
+const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
+
+// Stats
+const totalVideos = (videos?.length ?? 0) + (shorts?.length ?? 0);
+const totalViews =
+  channel?.viewCount ??
+  videos.reduce((s, v) => s + (v.views || 0), 0) +
+    shorts.reduce((s, v) => s + (v.views || 0), 0);
+const subscriberCount = channel?.subscriberCount ?? 0;
+const yearsActive = (() => {
+  try {
+    const firstYear = new Date(channel.publishedAt).getFullYear();
+    return new Date().getFullYear() - firstYear;
+  } catch {
+    return 0;
+  }
+})();
+
+// simple word freq from titles (top 10)
+function wordFreq(items) {
+  const s = items
+    .map((v) => v.title)
+    .join(" ")
+    .toLowerCase()
+    .replace(/[^\w\sáéíóúñ]/g, " ");
+  const words = s
+    .split(/\s+/)
+    .filter(
+      (w) =>
+        w.length > 3 &&
+        !["manga", "anime", "video", "review", "capítulo", "caps"].includes(w)
+    );
+  const m = {};
+  for (const w of words) m[w] = (m[w] || 0) + 1;
+  return Object.entries(m)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map((x) => x[0]);
+}
+const topWords = wordFreq([...videos, ...shorts]);
+---
+
+<Layout>
+  <main class="max-w-5xl mx-auto p-6">
+    <!-- Portada -->
+    <section
+      id="cover"
+      class="border-8 border-black p-8 bg-white mb-8 text-center"
+    >
+      <h1 class="text-4xl md:text-6xl font-extrabold">UmaruYT — Wrapped</h1>
+      <p class="mt-2 text-lg">
+        Celebrando una década de manga · {yearsActive} años
+      </p>
+      <div class="mt-4 flex items-center justify-center gap-4">
+        <button
+          id="downloadCover"
+          class="px-4 py-2 border-4 border-black bg-black text-white"
+          >Descargar póster</button
+        >
+        <button id="shareX" class="px-4 py-2 border-4 border-black"
+          >Compartir</button
+        >
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats" class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <h3 class="text-sm">Suscriptores</h3>
+        <div class="text-2xl font-bold">{formatNum(subscriberCount)}</div>
+      </div>
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <h3 class="text-sm">Vistas totales</h3>
+        <div class="text-2xl font-bold">{formatNum(totalViews)}</div>
+      </div>
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <h3 class="text-sm">Total de videos</h3>
+        <div class="text-2xl font-bold">{formatNum(totalVideos)}</div>
+      </div>
+    </section>
+
+    <!-- Top Videos -->
+    <section id="top-videos" class="mb-8">
+      <h2 class="text-2xl font-bold border-b-4 border-black inline-block mb-4">
+        🎬 Top Videos
+      </h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        {
+          topVideos.map((v) => (
+            <a
+              class="border-4 border-black bg-white p-2"
+              href={`https://youtu.be/${v.id}`}
+              target="_blank"
+            >
+              <img
+                src={v.thumbnail}
+                alt={v.title}
+                class="w-full h-40 object-cover mb-2"
+              />
+              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
+              <p class="text-xs mt-1">
+                👁 {formatNum(v.views)} ·{" "}
+                {new Date(v.publishedAt).getFullYear()}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Top Shorts -->
+    <section id="top-shorts" class="mb-8">
+      <h2 class="text-2xl font-bold border-b-4 border-black inline-block mb-4">
+        📱 Top Shorts
+      </h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        {
+          topShorts.map((v) => (
+            <a
+              class="border-4 border-black bg-white p-2"
+              href={`https://youtu.be/${v.id}`}
+              target="_blank"
+            >
+              <img
+                src={v.thumbnail}
+                alt={v.title}
+                class="w-full h-40 object-cover mb-2"
+              />
+              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
+              <p class="text-xs mt-1">
+                👁 {formatNum(v.views)} ·{" "}
+                {new Date(v.publishedAt).getFullYear()}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section id="insights" class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">⌛ Timeline</h2>
+
+      <div class="timeline">
+        <ul class="list-disc pl-5 text-sm">
+          {
+            timeline.map((t, i) => (
+              <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+                <div class="timeline__event__icon ">
+                  <div class="timeline__event__date">{t.year}</div>
+                </div>
+                <div class="timeline__event__content ">
+                  <div class="timeline__event__title">{t.text}</div>
+                  <div class="timeline__event__description">
+                    <p>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus
+                      iure veniam corporis incidunt reprehenderit accusantium id
+                      aut architecto harum quidem dolorem in!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section id="insights" class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">Insights</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 border-4 border-black">
+          <h3 class="font-semibold mb-2">Palabras más frecuentes</h3>
+          <div class="flex gap-2 flex-wrap">
+            {
+              topWords.map((w) => (
+                <span class="px-3 py-1 border rounded-full text-sm">{w}</span>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="p-4 border-4 border-black">
+          <h3 class="font-semibold mb-2">Timeline</h3>
+          <ul class="list-disc pl-5 text-sm">
+            {
+              timeline.map((t) => (
+                <li>
+                  {t.year} — {t.text}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Descargar póster de la portada/cover (ejemplo)
+    document
+      .getElementById("downloadCover")
+      .addEventListener("click", async () => {
+        const node = document.getElementById("cover");
+        const canvas = await html2canvas(node, {
+          scale: 2,
+          backgroundColor: null,
+        });
+        const url = canvas.toDataURL("image/png");
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "umaruyt-wrapped.png";
+        a.click();
+      });
+
+    // Ejemplo simple de compartir a X (Twitter)
+    document.getElementById("shareX").addEventListener("click", () => {
+      const text = encodeURIComponent(
+        `UmaruYT Wrapped — mis videos favoritos: ${topVideosTitles()}`
+      );
+      const url = encodeURIComponent(location.href);
+      window.open(
+        `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+        "_blank"
+      );
+    });
+
+    function topVideosTitles() {
+      return Array.from(document.querySelectorAll("#top-videos a p"))
+        .slice(0, 3)
+        .map((p) => p.textContent.trim())
+        .join(", ");
+    }
+  </script>
+</Layout>

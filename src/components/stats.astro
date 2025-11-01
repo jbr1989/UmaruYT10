@@ -1,0 +1,84 @@
+---
+import { formatNum, formatDuration } from "../utils";
+
+interface Props {
+  channel: any;
+  videos: any[];
+  shorts: any[];
+}
+
+const { channel, videos, shorts } = Astro.props;
+
+const totalDuration =
+  channel?.viewCount ??
+  videos.reduce((s, v) => s + (v.duration || 0), 0) +
+    shorts.reduce((s, v) => s + (v.duration || 0), 0);
+// const largestVideo = videos.sort((a, b) => b.duration - a.duration)[0];
+const subscriberCount = channel?.subscriberCount ?? 0;
+const yearsActive = (() => {
+  try {
+    const firstYear = new Date(channel.publishedAt).getFullYear();
+    return new Date().getFullYear() - firstYear;
+  } catch {
+    return 0;
+  }
+})();
+---
+
+<section id="stats">
+  <div class="container">
+    <h2>Un poco de información...</h2>
+    <div id="stats-items">
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <div class="text-2xl font-bold">{formatNum(yearsActive)}</div>
+        <h3 class="text-sm">Años activa</h3>
+      </div>
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <div class="text-2xl font-bold">{formatNum(subscriberCount)}</div>
+        <h3 class="text-sm">Suscriptores</h3>
+      </div>
+
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <div class="text-2xl font-bold">{formatNum(channel.videoCount)}</div>
+        <h3 class="text-sm">Total de videos</h3>
+      </div>
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <div class="text-2xl font-bold">{formatNum(channel.viewCount)}</div>
+        <h3 class="text-sm">Vistas totales</h3>
+      </div>
+
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <div class="text-2xl font-bold">{formatNum(videos.length)}</div>
+        <h3 class="text-sm">Videos largos publicados</h3>
+      </div>
+      <div class="border-4 border-black p-4 text-center bg-white">
+        <div class="text-2xl font-bold">{formatNum(shorts.length)}</div>
+        <h3 class="text-sm">Shorts publicados</h3>
+      </div>
+
+      <div
+        class="border-4 border-black p-4 text-center bg-white"
+        style="grid-column: 1 / -1"
+      >
+        <div class="text-2xl font-bold">{formatDuration(totalDuration)}</div>
+        <h3 class="text-sm">de contenido disponible</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #stats {
+    background: #c3c0ff;
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  #stats-items {
+    display: grid;
+    margin: 2em;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+</style>

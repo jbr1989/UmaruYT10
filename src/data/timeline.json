@@ -2,41 +2,65 @@
   {
     "year": 2015,
     "text": "Primer video subido al canal 🎥",
-    "id": "oPfIWyH0vV8"
+    "icon": "1",
+    "color": "orange",
+    "id": "oPfIWyH0vV8",
+    "thumbnail": "https://i.ytimg.com/vi/oPfIWyH0vV8/hqdefault.jpg"
   },
   {
     "year": 2016,
     "text": "Primer repaso a su colección de manga 📖",
-    "id": "UQeyN7mrpTc"
+    "icon": "book",
+    "color": "orange",
+    "id": "UQeyN7mrpTc",
+    "thumbnail": "https://i.ytimg.com/vi/UQeyN7mrpTc/hqdefault.jpg"
   },
   {
     "year": 2016,
     "text": "Primer Tea Time 🍵",
-    "id": "3bwoCfklgn8"
+    "icon": "1",
+    "color": "orange",
+    "id": "3bwoCfklgn8",
+    "thumbnail": "https://i.ytimg.com/vi/3bwoCfklgn8/hqdefault.jpg"
   },
   {
     "year": 2017,
     "text": "LA DISLEXIA 🔡🔢",
-    "id": "6ws73EHUV8s"
+    "icon": "1",
+    "color": "orange",
+    "id": "6ws73EHUV8s",
+    "thumbnail": "https://i.ytimg.com/vi/6ws73EHUV8s/hqdefault.jpg"
   },
   {
     "year": 2017,
     "text": "NUEVA SECCIÓN: Reviviendo clásicos 🎞️",
-    "id": "6ws73EHUV8s"
+    "icon": "1",
+    "color": "orange",
+    "id": "rI51cpI0A-Q",
+    "thumbnail": "https://i.ytimg.com/vi/rI51cpI0A-Q/hqdefault.jpg"
   },
   {
     "year": 2019,
     "text": "Primer video con pelo azul 🩵",
-    "id": "NQTwA8ZMst0"
+    "icon": "1",
+    "color": "blue",
+    "id": "NQTwA8ZMst0",
+    "thumbnail": "https://i.ytimg.com/vi/NQTwA8ZMst0/hqdefault.jpg"
   },
   {
     "year": 2023,
     "text": "Anuncio del primer Toledo Matsuri ⛩️",
-    "id": "ec5Bz6zkBPw"
+    "icon": "1",
+    "color": "blue",
+    "id": "ec5Bz6zkBPw",
+    "thumbnail": "https://i.ytimg.com/vi/ec5Bz6zkBPw/hqdefault.jpg"
   },
   {
     "year": 2025,
     "text": "Celebrando 10 años compartiendo historias ❤️",
-    "id": ""
+    "icon": "1",
+    "color": "blue",
+    "id": "",
+    "thumbnail": "https://i.ytimg.com/vi/oPfIWyH0vV8/hqdefault.jpg"
   }
 ]

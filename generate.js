@@ -93,6 +93,9 @@ async function mainVideos() {
   console.log(`📄 ${OUTPUT_SHORTS} (${videosShorts.length} shorts)`);
 }
 
+
+/*** INFO CHANNEL *****/
+
 async function fetchChannelInfo() {
   const OUTPUT_FILE = "./src/data/channel.json";
 
@@ -127,6 +130,56 @@ async function fetchChannelInfo() {
   console.log("🎉 Información del canal guardada en:", OUTPUT_FILE);
   // console.log(info);
 }
+
+
+/***** WRAPPED *****/
+
+function wordFreq(items) {
+  const s = items.map(v => v.title).join(" ").toLowerCase().replace(/[^\w\sáéíóúñ]/g, " ");
+  const words = s.split(/\s+/).filter(w => w.length > 3 && !["manga", "anime", "video", "review", "capítulo", "caps"].includes(w));
+  const m = {};
+  for (const w of words) m[w] = (m[w] || 0) + 1;
+  return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, 10);
+}
+
+function average(arr) {
+  return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
+}
+
+
+function mainWrapped() {
+  const OUTPUT_FILE = "./src/data/wrapped.json";
+
+  const wrapped = {
+    generatedAt: new Date().toISOString(),
+    channel: {
+      id: channel.id,
+      title: channel.title,
+      description: channel.description,
+      subscribers: channel.subscriberCount,
+      views: channel.viewCount,
+      videos: channel.videoCount,
+      publishedAt: channel.publishedAt,
+      banner: channel.banner,
+      thumbnail: channel.thumbnails?.high?.url,
+    },
+    stats: {
+      totalVideos: videos.length + shorts.length,
+      totalViews: videos.reduce((s, v) => s + v.views, 0) + shorts.reduce((s, v) => s + v.views, 0),
+      avgDuration: average(videos.map(v => v.duration)),
+      topWords: wordFreq([...videos, ...shorts]).map(([w, c]) => ({ word: w, count: c })),
+    },
+    topVideos: [...videos].sort((a, b) => b.views - a.views).slice(0, 15),
+    topShorts: [...shorts].sort((a, b) => b.views - a.views).slice(0, 15),
+    timeline,
+  };
+
+  fs.mkdirSync("./src/data", { recursive: true });
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(wrapped, null, 2));
+  console.log("🎉 Archivo generado:", OUTPUT_FILE);
+}
+
+
 
 async function main() {
   await mainVideos();

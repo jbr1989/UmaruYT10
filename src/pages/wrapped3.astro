@@ -1,0 +1,101 @@
+---
+import { formatNum } from "../utils";
+
+import Layout from "../layouts/Layout.astro";
+import Cover from "../components/cover.astro";
+import Stats from "../components/stats.astro";
+import Videos from "../components/videos.astro";
+import Shorts from "../components/shorts.astro";
+import TimeLineList from "../components/timeline/timelineList.astro";
+import Curiosidades from "../components/curiosidades.astro";
+
+import channel from "../data/channel.json";
+import videos from "../data/videos.json"; // si es array total o solo largos
+import shorts from "../data/shorts.json";
+import timeline from "../data/timeline.json";
+
+const topVideos = [...videos].sort((a, b) => b.views - a.views).slice(0, 6);
+const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
+
+// simple word freq from titles (top 10)
+---
+
+<Layout>
+  <main>
+    <!-- Portada -->
+    <Cover />
+
+    <!-- Stats -->
+    <Stats channel={channel} videos={videos} shorts={shorts} />
+
+    <!-- Top Videos -->
+    <Videos videos={videos} />
+
+    <!-- Top Shorts -->
+    <Shorts shorts={shorts} />
+
+    <!-- Insights -->
+    <TimeLineList />
+
+    <!-- Insights -->
+    <Curiosidades videos={videos} shorts={shorts} />
+  </main>
+
+  <script>
+    // Descargar póster de la portada/cover (ejemplo)
+    document
+      .getElementById("downloadCover")
+      .addEventListener("click", async () => {
+        const node = document.getElementById("cover");
+        const canvas = await html2canvas(node, {
+          scale: 2,
+          backgroundColor: null,
+        });
+        const url = canvas.toDataURL("image/png");
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "umaruyt-wrapped.png";
+        a.click();
+      });
+
+    // Ejemplo simple de compartir a X (Twitter)
+    document.getElementById("shareX").addEventListener("click", () => {
+      const text = encodeURIComponent(
+        `UmaruYT Wrapped — mis videos favoritos: ${topVideosTitles()}`
+      );
+      const url = encodeURIComponent(location.href);
+      window.open(
+        `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+        "_blank"
+      );
+    });
+
+    function topVideosTitles() {
+      return Array.from(document.querySelectorAll("#top-videos a p"))
+        .slice(0, 3)
+        .map((p) => p.textContent.trim())
+        .join(", ");
+    }
+  </script>
+</Layout>
+
+<style is:global>
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  /* section {
+    min-height: 100vh;
+    padding: 1em auto;
+  } */
+  .container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+</style>

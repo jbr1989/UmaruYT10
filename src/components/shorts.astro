@@ -1,0 +1,52 @@
+---
+import { formatNum } from "../utils";
+
+const { shorts } = Astro.props;
+
+const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
+---
+
+<section id="shorts">
+  <div class="container">
+    <h2>📱 Shorts 📱</h2>
+    <div>
+      <h3>Más vistos...</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        {
+          topShorts.map((v) => (
+            <a
+              class="border-4 border-black bg-white p-2"
+              href={`https://youtu.be/${v.id}`}
+              target="_blank"
+            >
+              <img
+                src={v.thumbnail}
+                alt={v.title}
+                class="w-full h-40 object-cover mb-2"
+              />
+              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
+              <p class="text-xs mt-1">
+                👁 {formatNum(v.views)} ·{" "}
+                {new Date(v.publishedAt).getFullYear()}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #shorts {
+    padding-top: 3em;
+    background: #a8ede8;
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  #shorts > .container > div {
+    margin-top: 2em;
+  }
+</style>

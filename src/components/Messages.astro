@@ -3,18 +3,29 @@ const messages = (await import("../data/message.json")).default;
 const shuffled = [...messages].sort(() => Math.random() - 0.5);
 ---
 
-<section class="p-6">
-  <h2 class="text-3xl font-bold mb-4 border-b-4 border-black inline-block">
-    Mensajes de los fans
-  </h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    {
-      shuffled.map((msg) => (
-        <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_0_#000] flex flex-col h-full">
-          <p class="mb-2">“ {msg.text} ”</p>
-          <p class="text-right font-bold mt-auto">— {msg.name}</p>
-        </div>
-      ))
-    }
+<section id="messages">
+  <div class="container">
+    <h2>Mensajes de los fans</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        shuffled.map((msg) => (
+          <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_0_#000] flex flex-col h-full">
+            <p class="mb-2">“ {msg.text} ”</p>
+            <p class="text-right font-bold mt-auto">— {msg.name}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
+
+<style>
+  #messages {
+    padding-block: 3em;
+    background: #a8ede8;
+    min-height: 100vh;
+    display: grid;
+    align-items: start;
+    justify-content: center;
+  }
+</style>

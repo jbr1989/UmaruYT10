@@ -33,6 +33,59 @@ function wordFreq(items) {
     .map((x) => ({ word: x[0], freq: x[1] }));
 }
 const topWords = wordFreq([...videos, ...shorts]);
+
+// Calcular videos por día de la semana
+// Función para obtener el día de la semana en la zona horaria local
+function getDayOfWeekLocal(dateString: string): number {
+  const date = new Date(dateString);
+  // getDay() ya convierte a la zona horaria local automáticamente
+  // cuando se parsea una fecha UTC, JavaScript la convierte a hora local
+  return date.getDay(); // 0 = Domingo, 1 = Lunes, etc.
+}
+
+const daysOfWeek = [
+  "Domingo",
+  "Lunes",
+  "Martes",
+  "Miércoles",
+  "Jueves",
+  "Viernes",
+  "Sábado",
+];
+const dayCountsVideos: Record<number, number> = {};
+
+[...videos].forEach((video) => {
+  if (video.publishedAt) {
+    const dayOfWeek = getDayOfWeekLocal(video.publishedAt);
+    dayCountsVideos[dayOfWeek] = (dayCountsVideos[dayOfWeek] || 0) + 1;
+  }
+});
+
+// Convertir a array y ordenar por cantidad (de mayor a menor)
+const videosByDay = Object.entries(dayCountsVideos)
+  .map(([day, count]) => ({
+    day: parseInt(day),
+    dayName: daysOfWeek[parseInt(day)],
+    count,
+  }))
+  .sort((a, b) => b.count - a.count);
+
+const dayCountsShorts: Record<number, number> = {};
+
+[...shorts].forEach((video) => {
+  if (video.publishedAt) {
+    const dayOfWeek = getDayOfWeekLocal(video.publishedAt);
+    dayCountsShorts[dayOfWeek] = (dayCountsShorts[dayOfWeek] || 0) + 1;
+  }
+});
+
+const shortsByDay = Object.entries(dayCountsShorts)
+  .map(([day, count]) => ({
+    day: parseInt(day),
+    dayName: daysOfWeek[parseInt(day)],
+    count,
+  }))
+  .sort((a, b) => b.count - a.count);
 ---
 
 <section id="curiosidades">
@@ -48,6 +101,34 @@ const topWords = wordFreq([...videos, ...shorts]);
           topWords.map((item) => (
             <span class="px-3 py-1 border rounded-full text-sm">
               {item.word} <span class="text-xs opacity-75">({item.freq})</span>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h3 class="font-semibold mb-2">Videos publicados por día de la semana</h3>
+      <div class="flex gap-2 flex-wrap">
+        {
+          videosByDay.map((item) => (
+            <span class="px-3 py-1 border rounded-full text-sm">
+              {item.dayName}{" "}
+              <span class="text-xs opacity-75">({item.count})</span>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h3 class="font-semibold mb-2">Shorts publicados por día de la semana</h3>
+      <div class="flex gap-2 flex-wrap">
+        {
+          shortsByDay.map((item) => (
+            <span class="px-3 py-1 border rounded-full text-sm">
+              {item.dayName}{" "}
+              <span class="text-xs opacity-75">({item.count})</span>
             </span>
           ))
         }

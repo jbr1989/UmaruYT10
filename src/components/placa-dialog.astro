@@ -1,0 +1,52 @@
+<dialog id="dialog-placa">
+  <p>¡Felicidades! 🥳</p>
+  <div class="card" id="card"></div>
+</dialog>
+
+<style>
+  #dialog-placa:open {
+    background: transparent;
+    text-align: center;
+    margin: auto;
+    width: 700px;
+    border-radius: 5px;
+    padding-inline: 1em;
+    overflow: hidden;
+    perspective: 1000px; /* Importante para efecto 3D */
+  }
+
+  #dialog-placa::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .card {
+    height: calc (100% - 2em);
+    max-height: 80vh;
+    aspect-ratio: 1/1.65;
+    /* height: 550px; */
+    background-image: url("/img/placa.webp");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.1s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+    image-rendering: auto;
+    margin: auto;
+  }
+</style>
+
+<script>
+  const card = document.getElementById("card");
+
+  document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 40; // rotación Y (mayor rango)
+    const y = (e.clientY / window.innerHeight - 0.5) * -40; // rotación X (mayor rango)
+    card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+  });
+
+  document.addEventListener("mouseleave", () => {
+    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  });
+</script>

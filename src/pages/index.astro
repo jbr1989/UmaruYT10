@@ -10,6 +10,7 @@ import Shorts from "../components/shorts.astro";
 import TimeLineList from "../components/timeline/timelineList.astro";
 import Curiosidades from "../components/curiosidades.astro";
 import Messages from "../components/Messages.astro";
+import Despedida from "../components/despedida.astro";
 import Footer from "../layouts/components/Footer.astro";
 
 import channel from "../data/channel.json";
@@ -52,6 +53,8 @@ const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
       <Curiosidades videos={videos} shorts={shorts} />
 
       <Messages />
+
+      <Despedida />
 
       <Footer />
     </div>
@@ -110,7 +113,21 @@ const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
     padding: 1em auto;
   } */
   .container {
-    width: min(1200px, 90%);
+    width: min(1200px, 95%);
     margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  #main-content > section:nth-child(3n + 1) {
+    background: #a8ede8;
+  }
+
+  #main-content > section:nth-child(3n + 2) {
+    background: #c3c0ff;
+  }
+
+  #main-content > section:nth-child(3n + 3) {
+    background: #ffc0ea;
   }
 </style>

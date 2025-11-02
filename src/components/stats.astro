@@ -29,39 +29,36 @@ const yearsActive = (() => {
   <div class="container">
     <h2>Un poco de información...</h2>
     <div id="stats-items">
-      <div class="border-4 border-black p-4 text-center bg-white">
-        <div class="text-2xl font-bold">{formatNum(yearsActive)}</div>
-        <h3 class="text-sm">Años activa</h3>
+      <div>
+        <div>{formatNum(yearsActive)}</div>
+        <p class="text-sm">Años activa</p>
       </div>
-      <div class="border-4 border-black p-4 text-center bg-white">
-        <div class="text-2xl font-bold">{formatNum(subscriberCount)}</div>
-        <h3 class="text-sm">Suscriptores</h3>
-      </div>
-
-      <div class="border-4 border-black p-4 text-center bg-white">
-        <div class="text-2xl font-bold">{formatNum(channel.videoCount)}</div>
-        <h3 class="text-sm">Total de videos</h3>
-      </div>
-      <div class="border-4 border-black p-4 text-center bg-white">
-        <div class="text-2xl font-bold">{formatNum(channel.viewCount)}</div>
-        <h3 class="text-sm">Vistas totales</h3>
+      <div>
+        <div>{formatNum(subscriberCount)}</div>
+        <p class="text-sm">Minasansitos</p>
       </div>
 
-      <div class="border-4 border-black p-4 text-center bg-white">
-        <div class="text-2xl font-bold">{formatNum(videos.length)}</div>
-        <h3 class="text-sm">Videos largos publicados</h3>
+      <div>
+        <div>{formatNum(channel.videoCount)}</div>
+        <p class="text-sm">Total de videos</p>
       </div>
-      <div class="border-4 border-black p-4 text-center bg-white">
-        <div class="text-2xl font-bold">{formatNum(shorts.length)}</div>
-        <h3 class="text-sm">Shorts publicados</h3>
+      <div>
+        <div>{formatNum(channel.viewCount)}</div>
+        <p class="text-sm">Vistas totales</p>
       </div>
 
-      <div
-        class="border-4 border-black p-4 text-center bg-white"
-        style="grid-column: 1 / -1"
-      >
-        <div class="text-2xl font-bold">{formatDuration(totalDuration)}</div>
-        <h3 class="text-sm">de contenido disponible</h3>
+      <div>
+        <div>{formatNum(videos.length)}</div>
+        <p class="text-sm">Videos largos publicados</p>
+      </div>
+      <div>
+        <div>{formatNum(shorts.length)}</div>
+        <p class="text-sm">Shorts publicados</p>
+      </div>
+
+      <div style="grid-column: 1 / -1">
+        <div>{formatDuration(totalDuration)}</div>
+        <p class="text-sm">de contenido disponible</p>
       </div>
     </div>
   </div>
@@ -69,15 +66,26 @@ const yearsActive = (() => {
 
 <style>
   #stats {
-    background: #c3c0ff;
     min-height: 100vh;
     display: grid;
     align-items: center;
   }
   #stats-items {
     display: grid;
-    margin: 2em;
-    grid-template-columns: repeat(2, 1fr);
+    margin-block: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 2em;
+  }
+
+  #stats-items > div {
+    border: 5px solid black;
+    padding: 0.5em;
+    text-align: center;
+    background: white;
+  }
+
+  #stats-items > div > div {
+    font-size: 3em;
+    font-weight: bold;
   }
 </style>

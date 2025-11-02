@@ -9,6 +9,12 @@ const topVideosViews = [...videos]
 const topVideosDuration = [...videos]
   .sort((a, b) => b.duration - a.duration)
   .slice(0, 6);
+const topVideosLikes = [...videos]
+  .sort((a, b) => b.likes - a.likes)
+  .slice(0, 6);
+const topVideosComments = [...videos]
+  .sort((a, b) => b.comments - a.comments)
+  .slice(0, 6);
 ---
 
 <section id="videos">
@@ -33,6 +39,58 @@ const topVideosDuration = [...videos]
               <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
               <p class="text-xs mt-1">
                 👁 {formatNum(v.views)} ·{" "}
+                {new Date(v.publishedAt).getFullYear()}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div>
+      <h3>Más likes...</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        {
+          topVideosLikes.map((v) => (
+            <a
+              class="border-4 border-black bg-white p-2"
+              href={`https://youtu.be/${v.id}`}
+              target="_blank"
+            >
+              <img
+                src={v.thumbnail}
+                alt={v.title}
+                class="w-full h-40 object-cover mb-2"
+              />
+              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
+              <p class="text-xs mt-1">
+                👍 {formatNum(v.likes)} ·{" "}
+                {new Date(v.publishedAt).getFullYear()}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div>
+      <h3>Más comentados...</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        {
+          topVideosComments.map((v) => (
+            <a
+              class="border-4 border-black bg-white p-2"
+              href={`https://youtu.be/${v.id}`}
+              target="_blank"
+            >
+              <img
+                src={v.thumbnail}
+                alt={v.title}
+                class="w-full h-40 object-cover mb-2"
+              />
+              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
+              <p class="text-xs mt-1">
+                📜 {formatNum(v.comments)} ·{" "}
                 {new Date(v.publishedAt).getFullYear()}
               </p>
             </a>

@@ -13,8 +13,17 @@ const totalDuration =
   channel?.viewCount ??
   videos.reduce((s, v) => s + (v.duration || 0), 0) +
     shorts.reduce((s, v) => s + (v.duration || 0), 0);
-// const largestVideo = videos.sort((a, b) => b.duration - a.duration)[0];
+
+const totalLikes =
+  videos.reduce((s, v) => s + v.likes, 0) +
+  shorts.reduce((s, v) => s + v.likes, 0);
+
+const totalComments =
+  videos.reduce((s, v) => s + v.comments, 0) +
+  shorts.reduce((s, v) => s + v.comments, 0);
+
 const subscriberCount = channel?.subscriberCount ?? 0;
+
 const yearsActive = (() => {
   try {
     const firstYear = new Date(channel.publishedAt).getFullYear();
@@ -44,7 +53,16 @@ const yearsActive = (() => {
       </div>
       <div>
         <div>{formatNum(channel.viewCount)}</div>
-        <p class="text-sm">Vistas totales</p>
+        <p class="text-sm">Visualizaciones</p>
+      </div>
+
+      <div>
+        <div>{formatNum(totalLikes)}</div>
+        <p class="text-sm">likes</p>
+      </div>
+      <div>
+        <div>{formatNum(totalComments)}</div>
+        <p class="text-sm">comentarios</p>
       </div>
 
       <div>

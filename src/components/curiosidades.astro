@@ -86,6 +86,71 @@ const shortsByDay = Object.entries(dayCountsShorts)
     count,
   }))
   .sort((a, b) => b.count - a.count);
+
+// Calcular videos por año
+function getYear(dateString: string): number {
+  const date = new Date(dateString);
+  return date.getFullYear();
+}
+
+const yearCountsVideos: Record<number, number> = {};
+[...videos].forEach((video) => {
+  if (video.publishedAt) {
+    const year = getYear(video.publishedAt);
+    yearCountsVideos[year] = (yearCountsVideos[year] || 0) + 1;
+  }
+});
+
+const videosByYear = Object.entries(yearCountsVideos)
+  .map(([year, count]) => ({
+    year: parseInt(year),
+    count,
+  }))
+  .sort((a, b) => b.year - a.year); // Ordenar por año (más reciente primero)
+
+const yearCountsShorts: Record<number, number> = {};
+[...shorts].forEach((video) => {
+  if (video.publishedAt) {
+    const year = getYear(video.publishedAt);
+    yearCountsShorts[year] = (yearCountsShorts[year] || 0) + 1;
+  }
+});
+
+const shortsByYear = Object.entries(yearCountsShorts)
+  .map(([year, count]) => ({
+    year: parseInt(year),
+    count,
+  }))
+  .sort((a, b) => b.year - a.year); // Ordenar por año (más reciente primero)
+
+const totalByYear: Record<number, { videos: number; shorts: number }> = {};
+[...videos].forEach((video) => {
+  if (video.publishedAt) {
+    const year = getYear(video.publishedAt);
+    if (!totalByYear[year]) {
+      totalByYear[year] = { videos: 0, shorts: 0 };
+    }
+    totalByYear[year].videos++;
+  }
+});
+[...shorts].forEach((short) => {
+  if (short.publishedAt) {
+    const year = getYear(short.publishedAt);
+    if (!totalByYear[year]) {
+      totalByYear[year] = { videos: 0, shorts: 0 };
+    }
+    totalByYear[year].shorts++;
+  }
+});
+
+const allByYear = Object.entries(totalByYear)
+  .map(([year, counts]) => ({
+    year: parseInt(year),
+    videos: counts.videos,
+    shorts: counts.shorts,
+    total: counts.videos + counts.shorts,
+  }))
+  .sort((a, b) => b.year - a.year);
 ---
 
 <section id="curiosidades">
@@ -129,6 +194,22 @@ const shortsByDay = Object.entries(dayCountsShorts)
             <span class="px-3 py-1 border rounded-full text-sm">
               {item.dayName}{" "}
               <span class="text-xs opacity-75">({item.count})</span>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h3 class="font-semibold mb-2">Videos publicados por año</h3>
+      <div class="flex gap-2 flex-wrap">
+        {
+          allByYear.map((item) => (
+            <span class="px-3 py-1 border rounded-full text-sm">
+              {item.year}{" "}
+              <span class="text-xs opacity-75">
+                ({item.total} total: {item.videos} videos, {item.shorts} shorts)
+              </span>
             </span>
           ))
         }

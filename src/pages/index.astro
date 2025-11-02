@@ -12,16 +12,12 @@ import Curiosidades from "../components/curiosidades.astro";
 import Messages from "../components/Messages.astro";
 import Despedida from "../components/despedida.astro";
 import Footer from "../layouts/components/Footer.astro";
+import Aniversarios from "../components/aniversarios.astro";
+import Placa from "../components/placa.astro";
 
 import channel from "../data/channel.json";
 import videos from "../data/videos.json"; // si es array total o solo largos
 import shorts from "../data/shorts.json";
-import timeline from "../data/timeline.json";
-
-const topVideos = [...videos].sort((a, b) => b.views - a.views).slice(0, 6);
-const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
-
-// simple word freq from titles (top 10)
 ---
 
 <Layout>
@@ -40,6 +36,11 @@ const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
       <!-- Stats -->
       <Stats channel={channel} videos={videos} shorts={shorts} />
 
+      <!-- Insights -->
+      <TimeLineList />
+
+      <Aniversarios />
+
       <!-- Top Videos -->
       <Videos videos={videos} />
 
@@ -47,12 +48,11 @@ const topShorts = [...shorts].sort((a, b) => b.views - a.views).slice(0, 6);
       <Shorts shorts={shorts} />
 
       <!-- Insights -->
-      <TimeLineList />
-
-      <!-- Insights -->
       <Curiosidades videos={videos} shorts={shorts} />
 
       <Messages />
+
+      <Placa />
 
       <Despedida />
 

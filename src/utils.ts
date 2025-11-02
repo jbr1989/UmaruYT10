@@ -39,12 +39,6 @@ export function formatDuration(totalDurationSeconds: number) {
 }
 
 export const excludedWords = [
-    "manga",
-    "anime",
-    "video",
-    "review",
-    "capítulo",
-    "caps",
     // Preposiciones
     "a",
     "ante",

@@ -54,6 +54,8 @@ async function mainVideos() {
     const videoIds = playlistData.items.map(item => item.contentDetails.videoId);
     const details = await fetchVideoDetails(videoIds);
 
+    console.log(details);
+
     const processed = details
       .filter(v => v.contentDetails && v.statistics)
       .map(v => {
@@ -63,7 +65,11 @@ async function mainVideos() {
           title: v.snippet.title,
           publishedAt: v.snippet.publishedAt,
           views: parseInt(v.statistics.viewCount || "0"),
+          likes: parseInt(v.statistics.likeCount || "0"),
           duration,
+          comments: parseInt(v.statistics.commentCount || "0"),
+          projection: v.contentDetails.projection,
+          liveBroadcastContent: v.contentDetails.liveBroadcastContent,
           thumbnail:
             v.snippet.thumbnails?.high?.url ||
             v.snippet.thumbnails?.default?.url ||

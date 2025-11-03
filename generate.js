@@ -41,7 +41,8 @@ async function mainVideos() {
   const OUTPUT_VIDEOS = "./src/data/videos.json";
   const OUTPUT_SHORTS = "./src/data/shorts.json";
 
-  const MAX_DURATION_SHORT = 300; // 5 minutos
+  const MAX_DURATION_SHORT = 5 * 60; // 
+  const SHORTS_START_DATE = new Date("2022-09-25T00:00:00Z");
 
   let videosLong = [];
   let videosShorts = [];
@@ -78,8 +79,15 @@ async function mainVideos() {
       });
 
     for (const video of processed) {
-      if (video.duration > MAX_DURATION_SHORT) videosLong.push(video);
-      else videosShorts.push(video);
+      const publishedAtDate = new Date(video.publishedAt);
+      const isShortByDuration = video.duration < MAX_DURATION_SHORT;
+      const isAfterCutoff = publishedAtDate > SHORTS_START_DATE;
+
+      if (isShortByDuration && isAfterCutoff) {
+        videosShorts.push(video);
+      } else {
+        videosLong.push(video);
+      }
     }
 
     console.log(

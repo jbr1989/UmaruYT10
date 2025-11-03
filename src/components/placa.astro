@@ -25,6 +25,16 @@ import PlacaDialog from "./placa-dialog.astro";
       border-radius: 5px;
       padding-inline: 1em;
       perspective: 1000px; /* Importante para efecto 3D */
+      opacity: 0;
+      transform: translateY(16px) scale(0.985);
+      transition:
+        opacity 600ms ease,
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #placa.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
 
     /* #dialog-placa::backdrop {
@@ -46,28 +56,43 @@ import PlacaDialog from "./placa-dialog.astro";
       will-change: transform;
       image-rendering: auto;
       margin: auto;
+      box-shadow:
+        0 10px 30px rgba(255, 255, 255, 0.925),
+        0 2px 8px rgba(255, 255, 255, 0.15);
+      position: relative;
+    }
+
+    #placa.visible .card::before {
+      transition: transform 900ms ease-in-out 150ms;
+      transform: translateX(120%);
     }
   </style>
 
   <script is:inline>
     function showPlaca(btn) {
       btn.style.display = "none";
-      document.querySelector("#placa").style.display = "block";
+      const placa = document.querySelector("#placa");
+      placa.style.display = "block";
+      // Forzar reflow para que la transición ocurra al añadir la clase
+      // eslint-disable-next-line no-unused-expressions
+      placa.offsetHeight;
+      placa.classList.add("visible");
     }
   </script>
 
   <script>
     const card = document.getElementById("card");
+    if (card) {
+      document.addEventListener("mousemove", (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 40; // rotación Y (mayor rango)
+        const y = (e.clientY / window.innerHeight - 0.5) * -40; // rotación X (mayor rango)
+        card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+      });
 
-    document.addEventListener("mousemove", (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 40; // rotación Y (mayor rango)
-      const y = (e.clientY / window.innerHeight - 0.5) * -40; // rotación X (mayor rango)
-      card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-    });
-
-    document.addEventListener("mouseleave", () => {
-      card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-    });
+      document.addEventListener("mouseleave", () => {
+        card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+      });
+    }
   </script>
 
   <style>

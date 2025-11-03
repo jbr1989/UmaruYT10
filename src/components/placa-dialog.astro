@@ -1,23 +1,21 @@
-<dialog id="dialog-placa">
-  <p>¡Felicidades! 🥳</p>
+<div id="dialog-placa">
   <div class="card" id="card"></div>
-</dialog>
+</div>
 
 <style>
-  #dialog-placa:open {
+  #dialog-placa {
     background: transparent;
     text-align: center;
     margin: auto;
     width: 700px;
     border-radius: 5px;
     padding-inline: 1em;
-    overflow: hidden;
     perspective: 1000px; /* Importante para efecto 3D */
   }
 
-  #dialog-placa::backdrop {
+  /* #dialog-placa::backdrop {
     background: rgba(0, 0, 0, 0.5);
-  }
+  } */
 
   .card {
     height: calc (100% - 2em);

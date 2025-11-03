@@ -3,7 +3,7 @@ import PlacaDialog from "./placa-dialog.astro";
 ---
 
 <section id="premio">
-  <div class="container" style="padding:5%;">
+  <div class="container" style="padding:5%;overflow:visible;">
     <h2>Una vez más muchas felicidades 🥳</h2>
     <div id="premio-message">
       <button id="" onclick="showPlaca(this)"
@@ -21,7 +21,6 @@ import PlacaDialog from "./placa-dialog.astro";
       background: transparent;
       text-align: center;
       margin: auto;
-      width: 700px;
       border-radius: 5px;
       padding-inline: 1em;
       perspective: 1000px; /* Importante para efecto 3D */
@@ -112,6 +111,10 @@ import PlacaDialog from "./placa-dialog.astro";
       align-items: center;
     } */
 
+    #premio-message {
+      margin: auto;
+      text-align: center;
+    }
     #premio-message button {
       width: 90%;
       margin: auto;

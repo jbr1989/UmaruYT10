@@ -2,21 +2,21 @@
 import PlacaDialog from "./placa-dialog.astro";
 ---
 
-<section id="placa">
+<section id="premio">
   <div class="container" style="padding:5%;">
     <h2>Una vez más muchas felicidades 🥳</h2>
-    <div id="placa-message">
-      <button onclick="showPlaca(this)"
+    <div id="premio-message">
+      <button id="" onclick="showPlaca(this)"
         ><span>Haz click aquí para ver tu premio</span></button
       >
-      <div id="dialog-placa">
+      <div id="placa">
         <div class="card" id="card"></div>
       </div>
     </div>
   </div>
 
   <style>
-    #dialog-placa {
+    #placa {
       display: none;
       background: transparent;
       text-align: center;
@@ -52,7 +52,7 @@ import PlacaDialog from "./placa-dialog.astro";
   <script is:inline>
     function showPlaca(btn) {
       btn.style.display = "none";
-      document.querySelector("#dialog-placa").style.display = "block";
+      document.querySelector("#placa").style.display = "block";
     }
   </script>
 
@@ -71,7 +71,7 @@ import PlacaDialog from "./placa-dialog.astro";
   </script>
 
   <style>
-    #placa {
+    #premio {
       padding-block: 3em;
       min-height: 100vh;
       display: grid;
@@ -87,7 +87,7 @@ import PlacaDialog from "./placa-dialog.astro";
       align-items: center;
     } */
 
-    #placa-message button {
+    #premio-message button {
       width: 90%;
       margin: auto;
       padding: 1em 2em;
@@ -106,13 +106,13 @@ import PlacaDialog from "./placa-dialog.astro";
       cursor: pointer;
     }
 
-    #placa-message button:hover {
+    #premio-message button:hover {
       transform: scale(1.1);
       outline: 2px solid #70bdca;
       box-shadow: 4px 5px 17px -4px #268391;
     }
 
-    #placa-message button::before {
+    #premio-message button::before {
       content: "";
       position: absolute;
       left: -50px;

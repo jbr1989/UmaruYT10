@@ -1,0 +1,745 @@
+{
+  "generatedAt": "2025-11-03T22:03:38.407Z",
+  "summary": {
+    "totalVideos": 1928,
+    "totalVideosLong": 1309,
+    "totalShorts": 619,
+    "totalDuration": 1451977,
+    "totalViews": 26072581,
+    "totalLikes": 2221035,
+    "totalComments": 180085
+  },
+  "engagement": {
+    "topEngagementVideos": [
+      {
+        "id": "uKFDZDJbfl0",
+        "title": "🎁 MI REGALO DE NAVIDAD PARA VOSOTROS 🎁",
+        "views": 7553,
+        "likes": 1543,
+        "comments": 1353,
+        "engagementRate": 56.26,
+        "likeRate": 20.43,
+        "commentRate": 17.91
+      },
+      {
+        "id": "N3EpY7Wmzwo",
+        "title": "¡SORTEO DE 10 TOMOS DE SHINGEKI NO KYOJIN! [Sorteo Cerrado]",
+        "views": 8080,
+        "likes": 1260,
+        "comments": 1551,
+        "engagementRate": 53.99,
+        "likeRate": 15.59,
+        "commentRate": 19.2
+      },
+      {
+        "id": "iHW8NdTez8I",
+        "title": "¡¡SORTEO DE NAVIDAD!! ^^ [Cerrado]",
+        "views": 6654,
+        "likes": 1167,
+        "comments": 1141,
+        "engagementRate": 51.83,
+        "likeRate": 17.54,
+        "commentRate": 17.15
+      },
+      {
+        "id": "wRpmvqurzJE",
+        "title": "¡NECESITO VUESTRA AYUDA!",
+        "views": 781,
+        "likes": 85,
+        "comments": 103,
+        "engagementRate": 37.26,
+        "likeRate": 10.88,
+        "commentRate": 13.19
+      },
+      {
+        "id": "WawPym1e9AA",
+        "title": "¡MEGA SORTEO DE KIMI NO NA WA! | Selecta Visión [Cerrado]",
+        "views": 8193,
+        "likes": 1137,
+        "comments": 918,
+        "engagementRate": 36.29,
+        "likeRate": 13.88,
+        "commentRate": 11.2
+      },
+      {
+        "id": "47_vGnUazgI",
+        "title": "4 AÑOS EN YOUTUBE",
+        "views": 7591,
+        "likes": 1303,
+        "comments": 680,
+        "engagementRate": 35.08,
+        "likeRate": 17.17,
+        "commentRate": 8.96
+      },
+      {
+        "id": "_r7vJTP9mlQ",
+        "title": "5 AÑOS EN YOUTUBE... El más difícil de todos",
+        "views": 8113,
+        "likes": 1604,
+        "comments": 495,
+        "engagementRate": 31.97,
+        "likeRate": 19.77,
+        "commentRate": 6.1
+      },
+      {
+        "id": "GQ-YJ782m8E",
+        "title": "ÚLTIMO VÍDEO DEL AÑO",
+        "views": 2139,
+        "likes": 451,
+        "comments": 82,
+        "engagementRate": 28.75,
+        "likeRate": 21.08,
+        "commentRate": 3.83
+      },
+      {
+        "id": "pxBPzIjKA58",
+        "title": "📦 ¡LA MEJOR CAJA QUE HE ABIERTO! | Regalo de suscriptor + Sorteo [Cerrado] 📦",
+        "views": 13903,
+        "likes": 2230,
+        "comments": 820,
+        "engagementRate": 27.84,
+        "likeRate": 16.04,
+        "commentRate": 5.9
+      },
+      {
+        "id": "-AAbbAViPYI",
+        "title": "Muchas gracias a todos 💙",
+        "views": 12923,
+        "likes": 2825,
+        "comments": 353,
+        "engagementRate": 27.32,
+        "likeRate": 21.86,
+        "commentRate": 2.73
+      }
+    ],
+    "avgEngagementRate": 11.65
+  },
+  "titles": {
+    "topWords": [
+      {
+        "word": "manga",
+        "count": 946
+      },
+      {
+        "word": "anime",
+        "count": 338
+      },
+      {
+        "word": "mangas",
+        "count": 259
+      },
+      {
+        "word": "unboxing",
+        "count": 144
+      },
+      {
+        "word": "opinión",
+        "count": 121
+      },
+      {
+        "word": "colección",
+        "count": 112
+      },
+      {
+        "word": "compras",
+        "count": 111
+      },
+      {
+        "word": "vlog",
+        "count": 89
+      },
+      {
+        "word": "mega",
+        "count": 86
+      },
+      {
+        "word": "opinion",
+        "count": 75
+      },
+      {
+        "word": "coleccionmanga",
+        "count": 74
+      },
+      {
+        "word": "reseña",
+        "count": 68
+      },
+      {
+        "word": "novedades",
+        "count": 68
+      },
+      {
+        "word": "lectura",
+        "count": 65
+      },
+      {
+        "word": "animes",
+        "count": 65
+      },
+      {
+        "word": "sorteo",
+        "count": 64
+      },
+      {
+        "word": "lecturas",
+        "count": 61
+      },
+      {
+        "word": "japón",
+        "count": 60
+      },
+      {
+        "word": "libros",
+        "count": 59
+      },
+      {
+        "word": "colecciondemanga",
+        "count": 57
+      },
+      {
+        "word": "time",
+        "count": 55
+      },
+      {
+        "word": "tokyo",
+        "count": 55
+      },
+      {
+        "word": "coleccionista",
+        "count": 54
+      },
+      {
+        "word": "leer",
+        "count": 50
+      },
+      {
+        "word": "tea",
+        "count": 50
+      },
+      {
+        "word": "crítica",
+        "count": 50
+      },
+      {
+        "word": "mes",
+        "count": 48
+      },
+      {
+        "word": "one",
+        "count": 47
+      },
+      {
+        "word": "pena",
+        "count": 45
+      },
+      {
+        "word": "obra",
+        "count": 44
+      },
+      {
+        "word": "obras",
+        "count": 44
+      },
+      {
+        "word": "piece",
+        "count": 44
+      },
+      {
+        "word": "the",
+        "count": 44
+      },
+      {
+        "word": "haul",
+        "count": 44
+      },
+      {
+        "word": "directo",
+        "count": 41
+      },
+      {
+        "word": "ghoul",
+        "count": 41
+      },
+      {
+        "word": "review",
+        "count": 40
+      },
+      {
+        "word": "merece",
+        "count": 39
+      },
+      {
+        "word": "shingeki",
+        "count": 38
+      },
+      {
+        "word": "temporada",
+        "count": 37
+      },
+      {
+        "word": "organizando",
+        "count": 37
+      },
+      {
+        "word": "nueva",
+        "count": 36
+      },
+      {
+        "word": "kyojin",
+        "count": 36
+      },
+      {
+        "word": "otaku",
+        "count": 36
+      },
+      {
+        "word": "leído",
+        "count": 35
+      },
+      {
+        "word": "parte",
+        "count": 35
+      },
+      {
+        "word": "nuevos",
+        "count": 34
+      },
+      {
+        "word": "comparación",
+        "count": 32
+      },
+      {
+        "word": "años",
+        "count": 31
+      },
+      {
+        "word": "top",
+        "count": 31
+      }
+    ],
+    "topEmojis": [
+      {
+        "emoji": "📚",
+        "count": 483
+      },
+      {
+        "emoji": "📦",
+        "count": 213
+      },
+      {
+        "emoji": "✨",
+        "count": 144
+      },
+      {
+        "emoji": "⛩",
+        "count": 25
+      },
+      {
+        "emoji": "❌",
+        "count": 17
+      },
+      {
+        "emoji": "💸",
+        "count": 17
+      },
+      {
+        "emoji": "🌟",
+        "count": 11
+      },
+      {
+        "emoji": "🤔",
+        "count": 11
+      },
+      {
+        "emoji": "☠",
+        "count": 10
+      },
+      {
+        "emoji": "🏴",
+        "count": 9
+      },
+      {
+        "emoji": "👀",
+        "count": 9
+      },
+      {
+        "emoji": "🎁",
+        "count": 8
+      },
+      {
+        "emoji": "💙",
+        "count": 7
+      },
+      {
+        "emoji": "😅",
+        "count": 7
+      },
+      {
+        "emoji": "🥲",
+        "count": 7
+      },
+      {
+        "emoji": "🌸",
+        "count": 6
+      },
+      {
+        "emoji": "🔴",
+        "count": 6
+      },
+      {
+        "emoji": "😉",
+        "count": 6
+      },
+      {
+        "emoji": "💫",
+        "count": 6
+      },
+      {
+        "emoji": "✈",
+        "count": 5
+      }
+    ],
+    "avgLength": 64,
+    "longestTitle": {
+      "title": "Mangas que me han llegado recientemente 📚 de Arechi y Distrito 🫣 #manga #colecciondemanga #haulmanga",
+      "length": 102
+    },
+    "shortestTitle": {
+      "title": "",
+      "length": 0
+    }
+  },
+  "timing": {
+    "bestDay": {
+      "day": "sábado",
+      "count": 361
+    },
+    "bestHour": {
+      "hour": "17",
+      "count": 470
+    },
+    "videosByDay": {
+      "lunes": 126,
+      "domingo": 158,
+      "sábado": 361,
+      "miércoles": 285,
+      "viernes": 69,
+      "jueves": 179,
+      "martes": 131
+    },
+    "videosByHour": {
+      "0": 13,
+      "1": 7,
+      "2": 9,
+      "3": 9,
+      "4": 14,
+      "5": 7,
+      "6": 5,
+      "7": 16,
+      "8": 10,
+      "9": 5,
+      "10": 11,
+      "11": 12,
+      "12": 24,
+      "13": 36,
+      "14": 41,
+      "15": 29,
+      "16": 250,
+      "17": 470,
+      "18": 229,
+      "19": 59,
+      "20": 21,
+      "21": 7,
+      "22": 9,
+      "23": 16
+    },
+    "videosByMonth": {
+      "noviembre de 2025": 2,
+      "octubre de 2025": 10,
+      "septiembre de 2025": 11,
+      "agosto de 2025": 9,
+      "julio de 2025": 11,
+      "junio de 2025": 13,
+      "mayo de 2025": 16,
+      "abril de 2025": 6,
+      "marzo de 2025": 8,
+      "febrero de 2025": 4,
+      "enero de 2025": 8,
+      "diciembre de 2024": 7,
+      "noviembre de 2024": 6,
+      "octubre de 2024": 7,
+      "septiembre de 2024": 6,
+      "agosto de 2024": 6,
+      "julio de 2024": 5,
+      "junio de 2024": 8,
+      "mayo de 2024": 6,
+      "abril de 2024": 10,
+      "marzo de 2024": 8,
+      "febrero de 2024": 7,
+      "enero de 2024": 6,
+      "diciembre de 2023": 7,
+      "noviembre de 2023": 8,
+      "octubre de 2023": 6,
+      "septiembre de 2023": 6,
+      "agosto de 2023": 7,
+      "julio de 2023": 6,
+      "junio de 2023": 9,
+      "mayo de 2023": 7,
+      "abril de 2023": 7,
+      "marzo de 2023": 8,
+      "febrero de 2023": 6,
+      "enero de 2023": 6,
+      "diciembre de 2022": 9,
+      "noviembre de 2022": 9,
+      "octubre de 2022": 13,
+      "septiembre de 2022": 10,
+      "agosto de 2022": 7,
+      "julio de 2022": 11,
+      "junio de 2022": 9,
+      "mayo de 2022": 9,
+      "abril de 2022": 8,
+      "marzo de 2022": 9,
+      "febrero de 2022": 7,
+      "enero de 2022": 8,
+      "diciembre de 2021": 8,
+      "noviembre de 2021": 10,
+      "octubre de 2021": 12,
+      "septiembre de 2021": 11,
+      "agosto de 2021": 5,
+      "julio de 2021": 8,
+      "junio de 2021": 10,
+      "mayo de 2021": 10,
+      "abril de 2021": 15,
+      "marzo de 2021": 18,
+      "febrero de 2021": 15,
+      "enero de 2021": 14,
+      "diciembre de 2020": 14,
+      "noviembre de 2020": 14,
+      "octubre de 2020": 12,
+      "septiembre de 2020": 10,
+      "agosto de 2020": 10,
+      "julio de 2020": 11,
+      "junio de 2020": 11,
+      "mayo de 2020": 10,
+      "abril de 2020": 8,
+      "marzo de 2020": 12,
+      "febrero de 2020": 10,
+      "enero de 2020": 11,
+      "diciembre de 2019": 9,
+      "noviembre de 2019": 11,
+      "octubre de 2019": 12,
+      "septiembre de 2019": 11,
+      "agosto de 2019": 13,
+      "julio de 2019": 12,
+      "junio de 2019": 9,
+      "mayo de 2019": 9,
+      "abril de 2019": 8,
+      "marzo de 2019": 11,
+      "febrero de 2019": 9,
+      "enero de 2019": 11,
+      "diciembre de 2018": 14,
+      "noviembre de 2018": 14,
+      "octubre de 2018": 17,
+      "septiembre de 2018": 15,
+      "agosto de 2018": 13,
+      "julio de 2018": 13,
+      "junio de 2018": 13,
+      "mayo de 2018": 16,
+      "abril de 2018": 15,
+      "marzo de 2018": 13,
+      "febrero de 2018": 12,
+      "enero de 2018": 12,
+      "diciembre de 2017": 13,
+      "noviembre de 2017": 11,
+      "octubre de 2017": 12,
+      "septiembre de 2017": 13,
+      "agosto de 2017": 14,
+      "julio de 2017": 13,
+      "junio de 2017": 11,
+      "mayo de 2017": 14,
+      "abril de 2017": 13,
+      "marzo de 2017": 16,
+      "febrero de 2017": 14,
+      "enero de 2017": 16,
+      "diciembre de 2016": 15,
+      "noviembre de 2016": 13,
+      "octubre de 2016": 16,
+      "septiembre de 2016": 20,
+      "agosto de 2016": 16,
+      "julio de 2016": 18,
+      "junio de 2016": 14,
+      "mayo de 2016": 13,
+      "abril de 2016": 10,
+      "marzo de 2016": 15,
+      "febrero de 2016": 18,
+      "enero de 2016": 20,
+      "diciembre de 2015": 17,
+      "noviembre de 2015": 11
+    },
+    "longestStreak": {
+      "days": 144,
+      "startDate": "2025-04-12T18:30:57.000Z"
+    }
+  },
+  "duration": {
+    "avgDurationSeconds": 1083,
+    "avgDurationFormatted": "18m 3s",
+    "distribution": {
+      "0-1min": 0,
+      "1-5min": 73,
+      "5-10min": 369,
+      "10-20min": 583,
+      "20-60min": 231,
+      "60min+": 53
+    },
+    "optimalRange": {
+      "range": "0-5min",
+      "avgEngagement": 12.216738868032593,
+      "count": 692
+    }
+  },
+  "comparison": {
+    "shorts": {
+      "total": 619,
+      "totalViews": 5970148,
+      "totalLikes": 622426,
+      "totalComments": 12617,
+      "avgViews": 9644.827140549272,
+      "avgEngagement": 12.023519374687314
+    },
+    "longVideos": {
+      "total": 1309,
+      "totalViews": 20102433,
+      "totalLikes": 1598609,
+      "totalComments": 167468,
+      "avgViews": 15357.09167303285,
+      "avgEngagement": 11.477307624119634
+    }
+  },
+  "highlights": {
+    "hiddenGems": [
+      {
+        "id": "uKFDZDJbfl0",
+        "title": "🎁 MI REGALO DE NAVIDAD PARA VOSOTROS 🎁",
+        "views": 7553,
+        "engagementRate": 56.26
+      },
+      {
+        "id": "N3EpY7Wmzwo",
+        "title": "¡SORTEO DE 10 TOMOS DE SHINGEKI NO KYOJIN! [Sorteo Cerrado]",
+        "views": 8080,
+        "engagementRate": 53.99
+      },
+      {
+        "id": "iHW8NdTez8I",
+        "title": "¡¡SORTEO DE NAVIDAD!! ^^ [Cerrado]",
+        "views": 6654,
+        "engagementRate": 51.83
+      },
+      {
+        "id": "wRpmvqurzJE",
+        "title": "¡NECESITO VUESTRA AYUDA!",
+        "views": 781,
+        "engagementRate": 37.26
+      },
+      {
+        "id": "WawPym1e9AA",
+        "title": "¡MEGA SORTEO DE KIMI NO NA WA! | Selecta Visión [Cerrado]",
+        "views": 8193,
+        "engagementRate": 36.29
+      },
+      {
+        "id": "47_vGnUazgI",
+        "title": "4 AÑOS EN YOUTUBE",
+        "views": 7591,
+        "engagementRate": 35.08
+      },
+      {
+        "id": "_r7vJTP9mlQ",
+        "title": "5 AÑOS EN YOUTUBE... El más difícil de todos",
+        "views": 8113,
+        "engagementRate": 31.97
+      },
+      {
+        "id": "GQ-YJ782m8E",
+        "title": "ÚLTIMO VÍDEO DEL AÑO",
+        "views": 2139,
+        "engagementRate": 28.75
+      },
+      {
+        "id": "1CDwlpiUa3c",
+        "title": "¿Soy demasiado mayor para ver anime? 🫣 #anime #manga #otaku #reflexion #opinion",
+        "views": 4018,
+        "engagementRate": 25.44
+      },
+      {
+        "id": "mA4qLzFVzLQ",
+        "title": "CAMBIOS IMPORTANTES Y PROYECTOS 2025 | Umaru",
+        "views": 4325,
+        "engagementRate": 25.29
+      }
+    ],
+    "consistentPerformers": [
+      {
+        "id": "uKFDZDJbfl0",
+        "title": "🎁 MI REGALO DE NAVIDAD PARA VOSOTROS 🎁",
+        "views": 7553,
+        "engagementRate": 56.26
+      },
+      {
+        "id": "N3EpY7Wmzwo",
+        "title": "¡SORTEO DE 10 TOMOS DE SHINGEKI NO KYOJIN! [Sorteo Cerrado]",
+        "views": 8080,
+        "engagementRate": 53.99
+      },
+      {
+        "id": "iHW8NdTez8I",
+        "title": "¡¡SORTEO DE NAVIDAD!! ^^ [Cerrado]",
+        "views": 6654,
+        "engagementRate": 51.83
+      },
+      {
+        "id": "WawPym1e9AA",
+        "title": "¡MEGA SORTEO DE KIMI NO NA WA! | Selecta Visión [Cerrado]",
+        "views": 8193,
+        "engagementRate": 36.29
+      },
+      {
+        "id": "47_vGnUazgI",
+        "title": "4 AÑOS EN YOUTUBE",
+        "views": 7591,
+        "engagementRate": 35.08
+      },
+      {
+        "id": "_r7vJTP9mlQ",
+        "title": "5 AÑOS EN YOUTUBE... El más difícil de todos",
+        "views": 8113,
+        "engagementRate": 31.97
+      },
+      {
+        "id": "GQ-YJ782m8E",
+        "title": "ÚLTIMO VÍDEO DEL AÑO",
+        "views": 2139,
+        "engagementRate": 28.75
+      },
+      {
+        "id": "pxBPzIjKA58",
+        "title": "📦 ¡LA MEJOR CAJA QUE HE ABIERTO! | Regalo de suscriptor + Sorteo [Cerrado] 📦",
+        "views": 13903,
+        "engagementRate": 27.84
+      },
+      {
+        "id": "-AAbbAViPYI",
+        "title": "Muchas gracias a todos 💙",
+        "views": 12923,
+        "engagementRate": 27.32
+      },
+      {
+        "id": "1CDwlpiUa3c",
+        "title": "¿Soy demasiado mayor para ver anime? 🫣 #anime #manga #otaku #reflexion #opinion",
+        "views": 4018,
+        "engagementRate": 25.44
+      }
+    ]
+  }
+}

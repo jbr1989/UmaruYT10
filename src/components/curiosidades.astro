@@ -1,38 +1,7 @@
 ---
-import { excludedWords } from "../utils";
+const insights = (await import("../data/insights.json")).default;
 
 const { videos, shorts } = Astro.props;
-
-function normalizeAccents(str: string) {
-  // Preservar la ñ antes de normalizar
-  return str
-    .replace(/ñ/g, "\u0001")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\u0001/g, "ñ");
-}
-
-function wordFreq(items) {
-  const s = items
-    .map((v) => v.title)
-    .join(" ")
-    .toLowerCase()
-    .replace(/[^\w\sáéíóúñ]/g, " ");
-
-  const normalizedExcluded = excludedWords.map((w) => normalizeAccents(w));
-
-  const words = s
-    .split(/\s+/)
-    .map((w) => normalizeAccents(w))
-    .filter((w) => w.length > 3 && !normalizedExcluded.includes(w));
-  const m = {};
-  for (const w of words) m[w] = (m[w] || 0) + 1;
-  return Object.entries(m)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 50)
-    .map((x) => ({ word: x[0], freq: x[1] }));
-}
-const topWords = wordFreq([...videos, ...shorts]);
 
 // Calcular videos por día de la semana
 // Función para obtener el día de la semana en la zona horaria local
@@ -163,9 +132,25 @@ const allByYear = Object.entries(totalByYear)
       </h3>
       <div class="flex gap-2 flex-wrap">
         {
-          topWords.map((item) => (
+          insights.titles.topWords.map((item) => (
             <span class="px-3 py-1 border rounded-full text-sm">
-              {item.word} <span class="text-xs opacity-75">({item.freq})</span>
+              {item.word} <span class="text-xs opacity-75">({item.count})</span>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-semibold mb-2">
+        Emojis más frecuentes en los nombres de los vídeos
+      </h3>
+      <div class="flex gap-2 flex-wrap">
+        {
+          insights.titles.topEmojis.map((item) => (
+            <span class="px-3 py-1 border rounded-full text-sm">
+              {item.emoji}{" "}
+              <span class="text-xs opacity-75">({item.count})</span>
             </span>
           ))
         }
@@ -212,6 +197,24 @@ const allByYear = Object.entries(totalByYear)
               </span>
             </span>
           ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h3 class="font-semibold mb-2">Duracion de los videos largos</h3>
+      <div class="flex gap-2 flex-wrap">
+        {
+          Object.entries(insights.duration.distribution).map(
+            ([duration, count]) => (
+              <span
+                class="px-3 py-1 border rounded-full text-sm"
+                key={duration}
+              >
+                {duration} <span class="text-xs opacity-75">({count})</span>
+              </span>
+            )
+          )
         }
       </div>
     </div>

@@ -157,6 +157,21 @@ const allByYear = Object.entries(totalByYear)
       </div>
     </div>
 
+    <div>
+      <h3 class="font-semibold mb-2">
+        Hashtags más frecuentes en los nombres de los vídeos
+      </h3>
+      <div class="flex gap-2 flex-wrap">
+        {
+          insights.titles.topHashtags.map((item) => (
+            <span class="px-3 py-1 border rounded-full text-sm">
+              {item.tag} <span class="text-xs opacity-75">({item.count})</span>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
     <div class="mt-8">
       <h3 class="font-semibold mb-2">Videos publicados por día de la semana</h3>
       <div class="flex gap-2 flex-wrap">
@@ -223,8 +238,6 @@ const allByYear = Object.entries(totalByYear)
 
 <style>
   #curiosidades {
-    padding-block: 3em;
-    min-height: 100vh;
     display: grid;
     align-items: start;
   }

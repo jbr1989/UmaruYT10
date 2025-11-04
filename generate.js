@@ -343,6 +343,227 @@ function analyzeCuriousData() {
   // === 7. ESTADÍSTICAS GENERALES ===
   const totalDuration = allVideos.reduce((sum, v) => sum + v.duration, 0);
   
+  // === 8. DETECCIÓN DE SERIES (por patrones en títulos) ===
+  const seriesPatterns = /(?:parte|part|episodio|ep|capítulo|cap|tomo|volumen|vol|#\d+|\d+ª? parte|unboxing|unbox|review|opinión|sorteo|directo|stream)/i;
+  const seriesMap = new Map();
+  
+  allVideos.forEach(video => {
+    const match = video.title.match(seriesPatterns);
+    if (match) {
+      // Extraer nombre base de la serie
+      const words = video.title.toLowerCase()
+        .replace(/[^\w\sáéíóúñü]/g, ' ')
+        .split(/\s+/)
+        .filter(w => w.length > 3 && !stopWords.has(w))
+        .slice(0, 3); // Primeras 3 palabras relevantes
+      
+      const seriesKey = words.join(' ').substring(0, 30);
+      
+      if (!seriesMap.has(seriesKey)) {
+        seriesMap.set(seriesKey, []);
+      }
+      seriesMap.get(seriesKey).push(video);
+    }
+  });
+  
+  const topSeries = Array.from(seriesMap.entries())
+    .map(([name, videos]) => ({
+      name,
+      count: videos.length,
+      totalViews: videos.reduce((sum, v) => sum + v.views, 0),
+      avgViews: videos.reduce((sum, v) => sum + v.views, 0) / videos.length,
+      videos: videos.map(v => ({ id: v.id, title: v.title, views: v.views })).slice(0, 5),
+    }))
+    .filter(s => s.count >= 3) // Series con al menos 3 videos
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 15);
+  
+  // === 9. VIDEOS CONVERSACIONALES (más comentarios que likes) ===
+  const conversationalVideos = videosWithEngagement
+    .filter(v => v.comments > v.likes && v.comments > 10)
+    .sort((a, b) => b.comments - a.comments)
+    .slice(0, 10);
+  
+  // === 10. ANÁLISIS DE HASHTAGS ===
+  const hashtagCount = {};
+  allTitles.forEach(title => {
+    const hashtags = title.match(/#[\wáéíóúñü]+/gi) || [];
+    hashtags.forEach(tag => {
+      const tagLower = tag.toLowerCase();
+      hashtagCount[tagLower] = (hashtagCount[tagLower] || 0) + 1;
+    });
+  });
+  
+  const topHashtags = Object.entries(hashtagCount)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 15)
+    .map(([tag, count]) => ({ tag, count }));
+  
+  // === 11. EVOLUCIÓN TEMPORAL (primeros 100 vs últimos 100 videos) ===
+  const sortedByDate = [...allVideos].sort((a, b) => 
+    new Date(a.publishedAt) - new Date(b.publishedAt)
+  );
+  
+  const first100 = sortedByDate.slice(0, 100);
+  const last100 = sortedByDate.slice(-100);
+  
+  const evolutionComparison = {
+    first100: {
+      avgViews: first100.reduce((sum, v) => sum + v.views, 0) / first100.length || 0,
+      avgLikes: first100.reduce((sum, v) => sum + v.likes, 0) / first100.length || 0,
+      avgComments: first100.reduce((sum, v) => sum + v.comments, 0) / first100.length || 0,
+      avgDuration: first100.reduce((sum, v) => sum + v.duration, 0) / first100.length || 0,
+    },
+    last100: {
+      avgViews: last100.reduce((sum, v) => sum + v.views, 0) / last100.length || 0,
+      avgLikes: last100.reduce((sum, v) => sum + v.likes, 0) / last100.length || 0,
+      avgComments: last100.reduce((sum, v) => sum + v.comments, 0) / last100.length || 0,
+      avgDuration: last100.reduce((sum, v) => sum + v.duration, 0) / last100.length || 0,
+    },
+    growth: {
+      viewsGrowth: last100.length > 0 && first100.length > 0
+        ? Math.round(((last100.reduce((sum, v) => sum + v.views, 0) / last100.length) / 
+           (first100.reduce((sum, v) => sum + v.views, 0) / first100.length) - 1) * 100)
+        : 0,
+      likesGrowth: last100.length > 0 && first100.length > 0
+        ? Math.round(((last100.reduce((sum, v) => sum + v.likes, 0) / last100.length) / 
+           (first100.reduce((sum, v) => sum + v.likes, 0) / first100.length) - 1) * 100)
+        : 0,
+    },
+  };
+  
+  // === 12. VIDEOS DE DIRECTOS vs NORMALES ===
+  const liveVideos = allVideos.filter(v => v.liveBroadcastContent === 'live' || v.liveBroadcastContent === 'upcoming');
+  const normalVideos = allVideos.filter(v => v.liveBroadcastContent === 'none');
+  
+  const liveVsNormal = {
+    live: {
+      count: liveVideos.length,
+      avgViews: liveVideos.length > 0 ? liveVideos.reduce((sum, v) => sum + v.views, 0) / liveVideos.length : 0,
+      avgLikes: liveVideos.length > 0 ? liveVideos.reduce((sum, v) => sum + v.likes, 0) / liveVideos.length : 0,
+      avgComments: liveVideos.length > 0 ? liveVideos.reduce((sum, v) => sum + v.comments, 0) / liveVideos.length : 0,
+      avgDuration: liveVideos.length > 0 ? liveVideos.reduce((sum, v) => sum + v.duration, 0) / liveVideos.length : 0,
+    },
+    normal: {
+      count: normalVideos.length,
+      avgViews: normalVideos.length > 0 ? normalVideos.reduce((sum, v) => sum + v.views, 0) / normalVideos.length : 0,
+      avgLikes: normalVideos.length > 0 ? normalVideos.reduce((sum, v) => sum + v.likes, 0) / normalVideos.length : 0,
+      avgComments: normalVideos.length > 0 ? normalVideos.reduce((sum, v) => sum + v.comments, 0) / normalVideos.length : 0,
+      avgDuration: normalVideos.length > 0 ? normalVideos.reduce((sum, v) => sum + v.duration, 0) / normalVideos.length : 0,
+    },
+  };
+  
+  // === 13. PALABRAS CLAVE QUE CORRELACIONAN CON MEJOR ENGAGEMENT ===
+  const wordEngagementMap = new Map();
+  
+  videosWithEngagement.forEach(video => {
+    const words = video.title.toLowerCase()
+      .replace(/[^\w\sáéíóúñü]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length > 3 && !stopWords.has(w));
+    
+    words.forEach(word => {
+      if (!wordEngagementMap.has(word)) {
+        wordEngagementMap.set(word, { totalEngagement: 0, count: 0 });
+      }
+      const stats = wordEngagementMap.get(word);
+      stats.totalEngagement += video.engagementRate;
+      stats.count++;
+    });
+  });
+  
+  const wordsWithBestEngagement = Array.from(wordEngagementMap.entries())
+    .map(([word, stats]) => ({
+      word,
+      avgEngagement: stats.totalEngagement / stats.count,
+      count: stats.count,
+    }))
+    .filter(w => w.count >= 5) // Palabras que aparecen en al menos 5 videos
+    .sort((a, b) => b.avgEngagement - a.avgEngagement)
+    .slice(0, 20);
+  
+  // === 14. VIDEOS CON MEJOR RATIO COMENTARIOS/LIKES (más conversacionales) ===
+  const commentRatio = videosWithEngagement
+    .filter(v => v.likes > 0)
+    .map(v => ({
+      ...v,
+      commentToLikeRatio: v.comments / v.likes,
+    }))
+    .sort((a, b) => b.commentToLikeRatio - a.commentToLikeRatio)
+    .slice(0, 10);
+  
+  // === 15. ANÁLISIS DE PATRONES DE TÍTULOS ===
+  const titlePatterns = {
+    questions: allVideos.filter(v => v.title.includes('?') || v.title.includes('¿')).length,
+    exclamations: allVideos.filter(v => v.title.includes('!') || v.title.includes('¡')).length,
+    lists: allVideos.filter(v => /^\d+[\.\)]|top \d+|los \d+/i.test(v.title)).length,
+    tutorials: allVideos.filter(v => /cómo|tutorial|guía|paso a paso/i.test(v.title)).length,
+    reviews: allVideos.filter(v => /review|opinión|análisis|crítica/i.test(v.title)).length,
+    unboxing: allVideos.filter(v => /unbox|abrir|caja|pack/i.test(v.title)).length,
+    sorteo: allVideos.filter(v => /sorteo|giveaway|regalo/i.test(v.title)).length,
+    directo: allVideos.filter(v => /directo|stream|live|en vivo/i.test(v.title)).length,
+  };
+  
+  // === 16. VIDEOS CON MEJOR VELOCIDAD DE VISTAS (viralidad potencial) ===
+  const now = new Date();
+  const videosWithAge = allVideos
+    .map(v => {
+      const publishedDate = new Date(v.publishedAt);
+      const ageInDays = (now - publishedDate) / (1000 * 60 * 60 * 24);
+      return {
+        ...v,
+        ageInDays,
+        viewsPerDay: ageInDays > 0 ? v.views / ageInDays : v.views,
+      };
+    })
+    .filter(v => v.ageInDays > 0);
+  
+  const fastestGrowing = [...videosWithAge]
+    .sort((a, b) => b.viewsPerDay - a.viewsPerDay)
+    .slice(0, 10);
+  
+  // === 17. MESES MÁS PRODUCTIVOS (por cantidad y por engagement) ===
+  const monthlyStats = {};
+  videosWithEngagement.forEach(video => {
+    const date = new Date(video.publishedAt);
+    const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+    
+    if (!monthlyStats[monthKey]) {
+      monthlyStats[monthKey] = {
+        count: 0,
+        totalViews: 0,
+        totalEngagement: 0,
+        videos: [],
+      };
+    }
+    
+    monthlyStats[monthKey].count++;
+    monthlyStats[monthKey].totalViews += video.views;
+    monthlyStats[monthKey].totalEngagement += video.engagementRate;
+    monthlyStats[monthKey].videos.push(video.id);
+  });
+  
+  const topMonthsByCount = Object.entries(monthlyStats)
+    .map(([month, stats]) => ({
+      month,
+      count: stats.count,
+      avgViews: stats.totalViews / stats.count,
+      avgEngagement: stats.totalEngagement / stats.count,
+    }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 10);
+  
+  const topMonthsByEngagement = Object.entries(monthlyStats)
+    .filter(([_, stats]) => stats.count >= 3) // Al menos 3 videos
+    .map(([month, stats]) => ({
+      month,
+      count: stats.count,
+      avgViews: stats.totalViews / stats.count,
+      avgEngagement: stats.totalEngagement / stats.count,
+    }))
+    .sort((a, b) => b.avgEngagement - a.avgEngagement)
+    .slice(0, 10);
+  
   // === COMPILAR RESULTADOS ===
   const insights = {
     generatedAt: new Date().toISOString(),
@@ -373,6 +594,7 @@ function analyzeCuriousData() {
     titles: {
       topWords,
       topEmojis,
+      topHashtags,
       avgLength: Math.round(avgTitleLength * 10) / 10,
       longestTitle: {
         title: longestTitle,
@@ -424,6 +646,68 @@ function analyzeCuriousData() {
         engagementRate: Math.round(v.engagementRate * 100) / 100,
       })),
     },
+    series: {
+      topSeries: topSeries.map(s => ({
+        name: s.name,
+        count: s.count,
+        totalViews: s.totalViews,
+        avgViews: Math.round(s.avgViews),
+        videos: s.videos,
+      })),
+    },
+    conversational: {
+      topConversationalVideos: conversationalVideos.map(v => ({
+        id: v.id,
+        title: v.title,
+        views: v.views,
+        likes: v.likes,
+        comments: v.comments,
+        commentToLikeRatio: Math.round((v.comments / v.likes) * 100) / 100,
+      })),
+    },
+    evolution: evolutionComparison,
+    liveVsNormal,
+    keywords: {
+      wordsWithBestEngagement: wordsWithBestEngagement.map(w => ({
+        word: w.word,
+        avgEngagement: Math.round(w.avgEngagement * 100) / 100,
+        count: w.count,
+      })),
+    },
+    commentRatio: {
+      topByCommentRatio: commentRatio.map(v => ({
+        id: v.id,
+        title: v.title,
+        views: v.views,
+        likes: v.likes,
+        comments: v.comments,
+        commentToLikeRatio: Math.round(v.commentToLikeRatio * 100) / 100,
+      })),
+    },
+    titlePatterns,
+    viral: {
+      fastestGrowing: fastestGrowing.map(v => ({
+        id: v.id,
+        title: v.title,
+        views: v.views,
+        ageInDays: Math.round(v.ageInDays),
+        viewsPerDay: Math.round(v.viewsPerDay),
+      })),
+    },
+    productivity: {
+      topMonthsByCount: topMonthsByCount.map(m => ({
+        month: m.month,
+        count: m.count,
+        avgViews: Math.round(m.avgViews),
+        avgEngagement: Math.round(m.avgEngagement * 100) / 100,
+      })),
+      topMonthsByEngagement: topMonthsByEngagement.map(m => ({
+        month: m.month,
+        count: m.count,
+        avgViews: Math.round(m.avgViews),
+        avgEngagement: Math.round(m.avgEngagement * 100) / 100,
+      })),
+    },
   };
   
   // Guardar
@@ -436,6 +720,11 @@ function analyzeCuriousData() {
   console.log(`📊 Mejor hora: ${bestHour[0]}:00 UTC (${bestHour[1]} videos)`);
   console.log(`📊 Racha más larga: ${maxStreak} días`);
   console.log(`📊 Duración óptima: ${optimalDuration?.range || 'N/A'}`);
+  console.log(`📊 Top serie detectada: "${topSeries[0]?.name || 'N/A'}" (${topSeries[0]?.count || 0} videos)`);
+  console.log(`📊 Hashtag más usado: ${topHashtags[0]?.tag || 'N/A'} (${topHashtags[0]?.count || 0} veces)`);
+  console.log(`📊 Crecimiento de vistas: ${evolutionComparison.growth.viewsGrowth > 0 ? '+' : ''}${evolutionComparison.growth.viewsGrowth}%`);
+  console.log(`📊 Mejor palabra clave (engagement): "${wordsWithBestEngagement[0]?.word || 'N/A'}"`);
+  console.log(`📊 Videos de directos: ${liveVsNormal.live.count} | Videos normales: ${liveVsNormal.normal.count}`);
 }
 
 // === Formatea duración en formato legible ===

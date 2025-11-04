@@ -6,7 +6,7 @@ const shuffled = [...messages].sort(() => Math.random() - 0.5);
 <section id="messages">
   <div class="container">
     <h2>Mensajes de los minasansitos</h2>
-    <div class="grid md:grid-cols-3 gap-6" style="align-items: baseline;">
+    <div class="grid md:grid-cols-2 gap-6" style="align-items: baseline;">
       {
         shuffled.map((msg) => (
           <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_4px_#000]">
@@ -21,8 +21,6 @@ const shuffled = [...messages].sort(() => Math.random() - 0.5);
 
 <style>
   #messages {
-    padding-block: 3em;
-    min-height: 100vh;
     display: grid;
     align-items: start;
   }

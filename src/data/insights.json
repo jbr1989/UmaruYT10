@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2025-11-03T22:03:38.407Z",
+  "generatedAt": "2025-11-03T22:24:50.042Z",
   "summary": {
     "totalVideos": 1928,
     "totalVideosLong": 1309,
     "totalShorts": 619,
     "totalDuration": 1451977,
-    "totalViews": 26072581,
-    "totalLikes": 2221035,
+    "totalViews": 26072637,
+    "totalLikes": 2221048,
     "totalComments": 180085
   },
   "engagement": {
@@ -399,6 +399,68 @@
         "count": 5
       }
     ],
+    "topHashtags": [
+      {
+        "tag": "#manga",
+        "count": 378
+      },
+      {
+        "tag": "#anime",
+        "count": 82
+      },
+      {
+        "tag": "#coleccionmanga",
+        "count": 74
+      },
+      {
+        "tag": "#opinion",
+        "count": 70
+      },
+      {
+        "tag": "#colecciondemanga",
+        "count": 57
+      },
+      {
+        "tag": "#coleccionista",
+        "count": 46
+      },
+      {
+        "tag": "#lectura",
+        "count": 40
+      },
+      {
+        "tag": "#libros",
+        "count": 34
+      },
+      {
+        "tag": "#recomendacion",
+        "count": 31
+      },
+      {
+        "tag": "#reseña",
+        "count": 30
+      },
+      {
+        "tag": "#coleccion",
+        "count": 30
+      },
+      {
+        "tag": "#askumaru",
+        "count": 26
+      },
+      {
+        "tag": "#organizacion",
+        "count": 24
+      },
+      {
+        "tag": "#lecturas",
+        "count": 23
+      },
+      {
+        "tag": "#japon",
+        "count": 23
+      }
+    ],
     "avgLength": 64,
     "longestTitle": {
       "title": "Mangas que me han llegado recientemente 📚 de Arechi y Distrito 🫣 #manga #colecciondemanga #haulmanga",
@@ -594,26 +656,26 @@
     },
     "optimalRange": {
       "range": "0-5min",
-      "avgEngagement": 12.216738868032593,
+      "avgEngagement": 12.21689891858625,
       "count": 692
     }
   },
   "comparison": {
     "shorts": {
       "total": 619,
-      "totalViews": 5970148,
-      "totalLikes": 622426,
+      "totalViews": 5970187,
+      "totalLikes": 622438,
       "totalComments": 12617,
-      "avgViews": 9644.827140549272,
-      "avgEngagement": 12.023519374687314
+      "avgViews": 9644.8901453958,
+      "avgEngagement": 12.023698300346648
     },
     "longVideos": {
       "total": 1309,
-      "totalViews": 20102433,
-      "totalLikes": 1598609,
+      "totalViews": 20102450,
+      "totalLikes": 1598610,
       "totalComments": 167468,
-      "avgViews": 15357.09167303285,
-      "avgEngagement": 11.477307624119634
+      "avgViews": 15357.104660045836,
+      "avgEngagement": 11.477262122204053
     }
   },
   "highlights": {
@@ -739,6 +801,925 @@
         "title": "¿Soy demasiado mayor para ver anime? 🫣 #anime #manga #otaku #reflexion #opinion",
         "views": 4018,
         "engagementRate": 25.44
+      }
+    ]
+  },
+  "series": {
+    "topSeries": [
+      {
+        "name": "merece pena obras",
+        "count": 17,
+        "totalViews": 294330,
+        "avgViews": 17314,
+        "videos": [
+          {
+            "id": "KQwWqndCdcw",
+            "title": "¿MERECE LA PENA SEGUIR ESTAS OBRAS? | Gannibal, Heavenly Delusion, Trace... APV #29",
+            "views": 6634
+          },
+          {
+            "id": "yQc8QKv4HPE",
+            "title": "¿MERECE LA PENA SEGUIR ESTAS OBRAS? | Jigokuraku, Heavenly Delusion, Vanitas... APV #27",
+            "views": 8189
+          },
+          {
+            "id": "QGiAOluvmFc",
+            "title": "¿MERECE LA PENA SEGUIR ESTAS OBRAS? | I Am a Hero, Kingdom, Atelier of Witch Hat... APV #26",
+            "views": 10702
+          },
+          {
+            "id": "DLiTePNZh4g",
+            "title": "¿MERECE LA PENA SEGUIR ESTAS OBRAS? | Jujutsu Kaisen, Jigokuraku, Gannibal... APV #25",
+            "views": 13623
+          },
+          {
+            "id": "pidGeE4mxzU",
+            "title": "¿MERECE LA PENA SEGUIR ESTAS OBRAS? | Haikyuu, DanDaDan, Given, Sanctify... APV #23",
+            "views": 13593
+          }
+        ]
+      },
+      {
+        "name": "errores coleccionar manga",
+        "count": 11,
+        "totalViews": 179085,
+        "avgViews": 16280,
+        "videos": [
+          {
+            "id": "1dhGbmq1W3g",
+            "title": "ERRORES al COLECCIONAR MANGA parte 11 📚 #manga #coleccionmanga",
+            "views": 8740
+          },
+          {
+            "id": "pIZAhXNcpUg",
+            "title": "ERRORES al COLECCIONAR MANGA parte 10 📚 #manga #coleccionmanga",
+            "views": 8287
+          },
+          {
+            "id": "_DbWo-FgyjM",
+            "title": "ERRORES al COLECCIONAR MANGA parte 9 📚 #manga #coleccionmanga",
+            "views": 7978
+          },
+          {
+            "id": "6l_ACi8GNY4",
+            "title": "ERRORES al COLECCIONAR MANGA parte 8 📚 #coleccionmanga",
+            "views": 19142
+          },
+          {
+            "id": "Nn5tZma4yY4",
+            "title": "ERRORES al COLECCIONAR MANGA parte 7 📚 #coleccionmanga",
+            "views": 12350
+          }
+        ]
+      },
+      {
+        "name": "sesión lectura estudio",
+        "count": 10,
+        "totalViews": 8014,
+        "avgViews": 801,
+        "videos": [
+          {
+            "id": "RZ2Rg_3BjuQ",
+            "title": "Sesión de lectura/estudio en directo 📚 Pomodoro 2 de 45' (sorteo subs y miembros)",
+            "views": 526
+          },
+          {
+            "id": "JWZEa1XbUjA",
+            "title": "Sesión de lectura/estudio en directo 📚 Pomodoro 2 de 45' (sorteo subs y miembros)",
+            "views": 592
+          },
+          {
+            "id": "Se1taJymiPU",
+            "title": "Sesión de lectura/estudio en directo 📚 Pomodoro 2 de 45' (sorteo subs y miembros)",
+            "views": 592
+          },
+          {
+            "id": "a1ZCIgXI4UI",
+            "title": "Sesión de lectura/estudio en directo 📚 Pomodoro 3 de 45' (sorteo subs y miembros",
+            "views": 715
+          },
+          {
+            "id": "OswhbEQ0Irs",
+            "title": "Sesión de lectura/estudio en directo 📚 Pomodoro 3 de 45' (sorteo subs y miembros)",
+            "views": 815
+          }
+        ]
+      },
+      {
+        "name": "reaccionando colecciones manga",
+        "count": 10,
+        "totalViews": 207703,
+        "avgViews": 20770,
+        "videos": [
+          {
+            "id": "U86idhrv54s",
+            "title": "REACCIONANDO a COLECCIONES MANGA de SUSCRIPTORES #10",
+            "views": 8377
+          },
+          {
+            "id": "Ut3A8p7yPGA",
+            "title": "REACCIONANDO a COLECCIONES MANGA de SUSCRIPTORES #9",
+            "views": 7932
+          },
+          {
+            "id": "B_TmJcqPPvA",
+            "title": "REACCIONANDO a COLECCIONES MANGA de SUSCRIPTORES #8",
+            "views": 9606
+          },
+          {
+            "id": "FBdEqqwv5fU",
+            "title": "REACCIONANDO a COLECCIONES MANGA de SUSCRIPTORES #7",
+            "views": 13443
+          },
+          {
+            "id": "r5-l609Cfw8",
+            "title": "REACCIONANDO a COLECCIONES MANGA de SUSCRIPTORES #6",
+            "views": 12540
+          }
+        ]
+      },
+      {
+        "name": "mega unboxing manga",
+        "count": 9,
+        "totalViews": 124976,
+        "avgViews": 13886,
+        "videos": [
+          {
+            "id": "4j1-khoDjdg",
+            "title": "📦 ¡MEGA UNBOXING 80! || Manga DAÑADO, Papelería JAPONESA, Arte y MUCHO más 📦",
+            "views": 4148
+          },
+          {
+            "id": "31gUZb0UT6s",
+            "title": "📦 ¡MEGA UNBOXING 57! | Mucho manga, Compras brutales y Regalitosss 📦",
+            "views": 8399
+          },
+          {
+            "id": "kDDzBc_XPW4",
+            "title": "📦 ¡MEGA UNBOXING 46! | Demasiado Manga, Compra FAIL y SKECHERS x TOKIDOKI 📦",
+            "views": 10391
+          },
+          {
+            "id": "glmFR_uUzZY",
+            "title": "📦 ¡MEGA UNBOXING 45! | Primer manga de KIBOOK, Ropa de YOUTUBERS, Papelería y más 📦",
+            "views": 10810
+          },
+          {
+            "id": "MF7L696laaU",
+            "title": "📦 ¡MEGA UNBOXING 42! | Mucho MANGA, Jujutsu Kaisen 0.5 y Compras geniales 📦",
+            "views": 14386
+          }
+        ]
+      },
+      {
+        "name": "mega unboxing regalos",
+        "count": 8,
+        "totalViews": 111768,
+        "avgViews": 13971,
+        "videos": [
+          {
+            "id": "XEO9wFx4_Xc",
+            "title": "📦¡MEGA UNBOXING 75! | Regalos BRUTALES de cumpleaños, Mucho MANGA y Papelería bonita 📦",
+            "views": 5544
+          },
+          {
+            "id": "QG26r0i_hHg",
+            "title": "📦 ¡MEGA UNBOXING 68! | Regalos frikis únicos, Juego de mesa, Papelería bonita y Novedades MANGA 📦",
+            "views": 6662
+          },
+          {
+            "id": "BtTQj07kU8M",
+            "title": "📦 ¡MEGA UNBOXING 55! | Regalos alucinantes, película Slam Dunk, manga Fruits Basket y novedades  📦",
+            "views": 10045
+          },
+          {
+            "id": "_eJ3AXwQnNo",
+            "title": "📦 ¡MEGA UNBOXING 48! | Regalos, POKEMON x Puma, HELLO KITTY x Miniso y mucho MANGA 📦",
+            "views": 11277
+          },
+          {
+            "id": "pR9VmP1S2Aw",
+            "title": "📦 ¡MEGA UNBOXING 27! | Regalos de Cumpleaños, Caja Gigante , Funko Exclusivo y más 📦",
+            "views": 19643
+          }
+        ]
+      },
+      {
+        "name": "vlog madrid compras",
+        "count": 7,
+        "totalViews": 22587,
+        "avgViews": 3227,
+        "videos": [
+          {
+            "id": "tpTFZDAst50",
+            "title": "VLOG Madrid | Compras @NfinityComics + ORANGE tomo 5 + Noticias Boku no Hero academia",
+            "views": 3303
+          },
+          {
+            "id": "ucHfHrTO3Ss",
+            "title": "VLOG Madrid | Compras manga + Haul #9",
+            "views": 11026
+          },
+          {
+            "id": "FnITGM20KEI",
+            "title": "Vlog Madrid | Compras @Omegacenter y haul #8",
+            "views": 1634
+          },
+          {
+            "id": "tY5iPUp0Ooo",
+            "title": "Vlog Madrid | Compras manga + haul #7",
+            "views": 787
+          },
+          {
+            "id": "a8xL928PJHI",
+            "title": "Vlog Madrid | Compras manga + haul #6",
+            "views": 1373
+          }
+        ]
+      },
+      {
+        "name": "mega unboxing compras",
+        "count": 6,
+        "totalViews": 59851,
+        "avgViews": 9975,
+        "videos": [
+          {
+            "id": "l1PFX9lj_Q8",
+            "title": "📦 ¡MEGA UNBOXING! 76 | Compras a ARTISTAS, Nuevos Teclados, el apagón y nuevos MANGAS 📦",
+            "views": 4765
+          },
+          {
+            "id": "oRRC9jROURY",
+            "title": "📦 ¡MEGA UNBOXING 69! | Compras a Artistas, Cofre de MINECRAFT, Novedades MANGA y más  📦",
+            "views": 5791
+          },
+          {
+            "id": "uiUQ28hFWUc",
+            "title": "📦 ¡MEGA UNBOXING 59! | Compras de DISNEYLAND, Colaboraciones ESPECTACULARES y Mucho Mucho MANGA 📦",
+            "views": 7699
+          },
+          {
+            "id": "0AcYcoSvRoo",
+            "title": "📦 ¡MEGA UNBOXING 54! | Compras BRUTALES a ARTISTAS, Artbook y MUCHO Manga 📦",
+            "views": 9344
+          },
+          {
+            "id": "2UICeRylue0",
+            "title": "📦 ¡MEGA UNBOXING 44! | Compras para JAPÓN y Muchas NOVEDADES Manga 📦",
+            "views": 11737
+          }
+        ]
+      },
+      {
+        "name": "merece pena nueva",
+        "count": 6,
+        "totalViews": 158999,
+        "avgViews": 26500,
+        "videos": [
+          {
+            "id": "YDwi8r3V6y0",
+            "title": "¿MERECE LA PENA LA NUEVA EDICIÓN COLECCIONISTA DE I AM A HERO? 📚 Opinión vs edición regular B6",
+            "views": 2770
+          },
+          {
+            "id": "VzLR8FSmtKM",
+            "title": "¿MERECE LA PENA LA NUEVA EDICIÓN 3 EN 1 DE NARUTO? | Opinión completa",
+            "views": 8364
+          },
+          {
+            "id": "K94xPTUB2VA",
+            "title": "¿MERECE LA PENA LA NUEVA EDICIÓN INTEGRAL MUSEUM? | Opinión vs edición regular",
+            "views": 6750
+          },
+          {
+            "id": "Ec1_FglrUdg",
+            "title": "¿MERECE LA PENA LA NUEVA EDICIÓN COLECCIONISTA DE SHINGEKI NO KYOJIN? | Opinión vs edición regular",
+            "views": 24872
+          },
+          {
+            "id": "yUr1i2gbQEo",
+            "title": "¿MERECE LA PENA LA NUEVA EDICIÓN 3 EN 1 DE ONE PIECE? | Opinión vs edición regular",
+            "views": 32566
+          }
+        ]
+      },
+      {
+        "name": "guardando mangas fundas",
+        "count": 5,
+        "totalViews": 47555,
+        "avgViews": 9511,
+        "videos": [
+          {
+            "id": "9mK1n0ZOqAc",
+            "title": "📚 Guardando MANGAS en fundas y respondiendo preguntas 🫣✨ En directo",
+            "views": 2567
+          },
+          {
+            "id": "WDA0iqMWjW8",
+            "title": "📚Guardando mis MANGAS en FUNDAS mientras CONTESTO PREGUNTITAS 4 📚 Directo",
+            "views": 9479
+          },
+          {
+            "id": "NuaM978_x1c",
+            "title": "📚Guardando mis MANGAS en FUNDAS + Preguntas y Respuestas 3 📚(Directo resubido)",
+            "views": 9042
+          },
+          {
+            "id": "vc9FQlJqQW8",
+            "title": "📚Guardando MANGAS en FUNDAS + Preguntas y Respuestas 2 📚 Directo resubido",
+            "views": 13139
+          },
+          {
+            "id": "aGjqAmF_puw",
+            "title": "📚 Guardando mis MANGAS en FUNDAS + Preguntas y Respuestas 1 📚 Directo resubido 😉",
+            "views": 13328
+          }
+        ]
+      },
+      {
+        "name": "mega unboxing mangas",
+        "count": 4,
+        "totalViews": 65734,
+        "avgViews": 16434,
+        "videos": [
+          {
+            "id": "aegz__9kLvA",
+            "title": "📦 ¡MEGA UNBOXING 71! | Muchos mangas nuevos y novedades para crear contenido 📦",
+            "views": 4973
+          },
+          {
+            "id": "yShaGfFPx_E",
+            "title": "📦 ¡MEGA UNBOXING 40! | Muchos MANGAS, Dulces Japoneses de anime y... ¡SORPRESAS!📦",
+            "views": 20764
+          },
+          {
+            "id": "6J31j_WHVLs",
+            "title": "📦 ¡MEGA UNBOXING 38! | +28 Mangas nuevos, Artistas increíbles y ANSIA VIVA 📦",
+            "views": 19657
+          },
+          {
+            "id": "DCRskQftZJM",
+            "title": "📦 ¡MEGA UNBOXING! | Mangas nuevos, ropa friki y juegos para la Switch ^^ 📦",
+            "views": 20340
+          }
+        ]
+      },
+      {
+        "name": "unboxing novedades manga",
+        "count": 4,
+        "totalViews": 39351,
+        "avgViews": 9838,
+        "videos": [
+          {
+            "id": "RJmCf-kI_ZU",
+            "title": "UNBOXING DE NOVEDADES 📚 Manga, Manhwa y Danmei",
+            "views": 5516
+          },
+          {
+            "id": "59iFH2cokbo",
+            "title": "¡UNBOXING de novedades MANGA! 📚 #manga #unboxing",
+            "views": 5138
+          },
+          {
+            "id": "R0HaV9Jx3dw",
+            "title": "Unboxing de novedades MANGA 📚 #manga #unboxing",
+            "views": 15348
+          },
+          {
+            "id": "niO0dhy4TtA",
+            "title": "📦 Unboxing de Novedades Manga 📦",
+            "views": 13349
+          }
+        ]
+      },
+      {
+        "name": "directo charlita chill",
+        "count": 3,
+        "totalViews": 2323,
+        "avgViews": 774,
+        "videos": [
+          {
+            "id": "DY-aQ5JcBmo",
+            "title": "¡Directo! Charlita de chill, chisme y nos ponemos al día ^^ (Sorteo mensual de !subs y miembros)",
+            "views": 629
+          },
+          {
+            "id": "DEZnGkigSaw",
+            "title": "¡Directo! Charlita de chill y chismeee 📚 (Sorteo mensual de !subs y miembros)",
+            "views": 747
+          },
+          {
+            "id": "dpuvz7hzU1I",
+            "title": "¡Directo! Charlita de chill, chisme y nos ponemos al día ^^ (Sorteo mensual de !subs y miembros)",
+            "views": 947
+          }
+        ]
+      },
+      {
+        "name": "explicación conoces kowloon",
+        "count": 3,
+        "totalViews": 13709,
+        "avgViews": 4570,
+        "videos": [
+          {
+            "id": "qutjfakxDEc",
+            "title": "EXPLICACIÓN de TODO lo que NO CONOCES de Kowloon Generic Romance | Destripando Animes ep. 8 y 9",
+            "views": 2088
+          },
+          {
+            "id": "fY8SS4fRJTg",
+            "title": "EXPLICACIÓN de TODO lo que NO CONOCES de Kowloon Generic Romance | Destripando Animes ep. 6 y 7",
+            "views": 2401
+          },
+          {
+            "id": "jFMMyb1umdI",
+            "title": "EXPLICACIÓN de TODO lo que NO CONOCES de Kowloon Generic Romance | Destripando Animes ep. 1 y 2",
+            "views": 9220
+          }
+        ]
+      },
+      {
+        "name": "comprando manga online",
+        "count": 3,
+        "totalViews": 59376,
+        "avgViews": 19792,
+        "videos": [
+          {
+            "id": "_yHyPrks5E0",
+            "title": "COMPRANDO MANGA ONLINE CONMIGO 📚 Mis tiendas de confianza y tips + unboxing de manga",
+            "views": 11604
+          },
+          {
+            "id": "1FuSBKR1oYQ",
+            "title": "COMPRANDO MANGA ONLINE CONMIGO 📚 Continuando colecciones + Unboxing",
+            "views": 17000
+          },
+          {
+            "id": "zYlTFxzJx8Y",
+            "title": "COMPRANDO MANGA ONLINE CONMIGO | Consejos y tips + Unboxing 📚",
+            "views": 30772
+          }
+        ]
+      }
+    ]
+  },
+  "conversational": {
+    "topConversationalVideos": [
+      {
+        "id": "N3EpY7Wmzwo",
+        "title": "¡SORTEO DE 10 TOMOS DE SHINGEKI NO KYOJIN! [Sorteo Cerrado]",
+        "views": 8080,
+        "likes": 1260,
+        "comments": 1551,
+        "commentToLikeRatio": 1.23
+      },
+      {
+        "id": "WCUVjkBA__s",
+        "title": "LA MAYOR DECEPCIÓN DE LA TEMPORADA | Juuni Taisen (12 taisen)",
+        "views": 51831,
+        "likes": 0,
+        "comments": 886,
+        "commentToLikeRatio": null
+      },
+      {
+        "id": "wRpmvqurzJE",
+        "title": "¡NECESITO VUESTRA AYUDA!",
+        "views": 781,
+        "likes": 85,
+        "comments": 103,
+        "commentToLikeRatio": 1.21
+      }
+    ]
+  },
+  "evolution": {
+    "first100": {
+      "avgViews": 7811.26,
+      "avgLikes": 361.29,
+      "avgComments": 53.52,
+      "avgDuration": 415.01
+    },
+    "last100": {
+      "avgViews": 5847.45,
+      "avgLikes": 496.86,
+      "avgComments": 21.97,
+      "avgDuration": 1312.19
+    },
+    "growth": {
+      "viewsGrowth": -25,
+      "likesGrowth": 38
+    }
+  },
+  "liveVsNormal": {
+    "live": {
+      "count": 0,
+      "avgViews": 0,
+      "avgLikes": 0,
+      "avgComments": 0,
+      "avgDuration": 0
+    },
+    "normal": {
+      "count": 0,
+      "avgViews": 0,
+      "avgLikes": 0,
+      "avgComments": 0,
+      "avgDuration": 0
+    }
+  },
+  "keywords": {
+    "wordsWithBestEngagement": [
+      {
+        "word": "regalo",
+        "avgEngagement": 23.19,
+        "count": 5
+      },
+      {
+        "word": "navidad",
+        "avgEngagement": 19.96,
+        "count": 10
+      },
+      {
+        "word": "youtube",
+        "avgEngagement": 19.46,
+        "count": 14
+      },
+      {
+        "word": "cerrado",
+        "avgEngagement": 19.1,
+        "count": 24
+      },
+      {
+        "word": "vosotros",
+        "avgEngagement": 18.63,
+        "count": 8
+      },
+      {
+        "word": "tomas",
+        "avgEngagement": 17.26,
+        "count": 5
+      },
+      {
+        "word": "falsas",
+        "avgEngagement": 17.26,
+        "count": 5
+      },
+      {
+        "word": "pasado",
+        "avgEngagement": 17.18,
+        "count": 6
+      },
+      {
+        "word": "vídeos",
+        "avgEngagement": 16.82,
+        "count": 7
+      },
+      {
+        "word": "necesito",
+        "avgEngagement": 16.46,
+        "count": 7
+      },
+      {
+        "word": "cambios",
+        "avgEngagement": 16.24,
+        "count": 10
+      },
+      {
+        "word": "puntuando",
+        "avgEngagement": 16.16,
+        "count": 5
+      },
+      {
+        "word": "baldas",
+        "avgEngagement": 16.16,
+        "count": 5
+      },
+      {
+        "word": "mangashelf",
+        "avgEngagement": 16.11,
+        "count": 5
+      },
+      {
+        "word": "smiley",
+        "avgEngagement": 16.08,
+        "count": 8
+      },
+      {
+        "word": "librero",
+        "avgEngagement": 16.04,
+        "count": 6
+      },
+      {
+        "word": "extra",
+        "avgEngagement": 15.93,
+        "count": 10
+      },
+      {
+        "word": "proyectos",
+        "avgEngagement": 15.59,
+        "count": 5
+      },
+      {
+        "word": "kyojin",
+        "avgEngagement": 15.57,
+        "count": 36
+      },
+      {
+        "word": "consultorio",
+        "avgEngagement": 15.54,
+        "count": 6
+      }
+    ]
+  },
+  "commentRatio": {
+    "topByCommentRatio": [
+      {
+        "id": "N3EpY7Wmzwo",
+        "title": "¡SORTEO DE 10 TOMOS DE SHINGEKI NO KYOJIN! [Sorteo Cerrado]",
+        "views": 8080,
+        "likes": 1260,
+        "comments": 1551,
+        "commentToLikeRatio": 1.23
+      },
+      {
+        "id": "wRpmvqurzJE",
+        "title": "¡NECESITO VUESTRA AYUDA!",
+        "views": 781,
+        "likes": 85,
+        "comments": 103,
+        "commentToLikeRatio": 1.21
+      },
+      {
+        "id": "iHW8NdTez8I",
+        "title": "¡¡SORTEO DE NAVIDAD!! ^^ [Cerrado]",
+        "views": 6654,
+        "likes": 1167,
+        "comments": 1141,
+        "commentToLikeRatio": 0.98
+      },
+      {
+        "id": "uKFDZDJbfl0",
+        "title": "🎁 MI REGALO DE NAVIDAD PARA VOSOTROS 🎁",
+        "views": 7553,
+        "likes": 1543,
+        "comments": 1353,
+        "commentToLikeRatio": 0.88
+      },
+      {
+        "id": "WawPym1e9AA",
+        "title": "¡MEGA SORTEO DE KIMI NO NA WA! | Selecta Visión [Cerrado]",
+        "views": 8193,
+        "likes": 1137,
+        "comments": 918,
+        "commentToLikeRatio": 0.81
+      },
+      {
+        "id": "LgVOKiTIYKQ",
+        "title": "EMANON VAGABUNDA [2/3] | Manga Reseña + SORTEO [Cerrado]",
+        "views": 2467,
+        "likes": 228,
+        "comments": 173,
+        "commentToLikeRatio": 0.76
+      },
+      {
+        "id": "4_YgZkPu78g",
+        "title": "SPEED ART Personajes masculinos + SORTEO [Cerrado]",
+        "views": 2784,
+        "likes": 248,
+        "comments": 140,
+        "commentToLikeRatio": 0.56
+      },
+      {
+        "id": "47_vGnUazgI",
+        "title": "4 AÑOS EN YOUTUBE",
+        "views": 7591,
+        "likes": 1303,
+        "comments": 680,
+        "commentToLikeRatio": 0.52
+      },
+      {
+        "id": "S4fGPrnuODg",
+        "title": "¿QUÉ ANIMES SIGO ESTA TEMPORADA? | animes primavera 2016",
+        "views": 2491,
+        "likes": 182,
+        "comments": 94,
+        "commentToLikeRatio": 0.52
+      },
+      {
+        "id": "Y8FHv12yo5M",
+        "title": "QUÉ DECEPCIÓN de TITÁN MARTILLO | Shingeki no Kyojin, The Final Season ep. 6 (Review + Comparación)",
+        "views": 44288,
+        "likes": 3493,
+        "comments": 1783,
+        "commentToLikeRatio": 0.51
+      }
+    ]
+  },
+  "titlePatterns": {
+    "questions": 378,
+    "exclamations": 337,
+    "lists": 30,
+    "tutorials": 59,
+    "reviews": 191,
+    "unboxing": 169,
+    "sorteo": 94,
+    "directo": 57
+  },
+  "viral": {
+    "fastestGrowing": [
+      {
+        "id": "Ev8L_uyyRE0",
+        "title": "En JAPÓN MOLESTAS como turista ⛩️ #japon #viajeajapon #tipsviaje",
+        "views": 144631,
+        "ageInDays": 70,
+        "viewsPerDay": 2062
+      },
+      {
+        "id": "J8CpfPaflB4",
+        "title": "MIS LECTURAS DE OCTUBRE 📚✨ Manga y Manhwa",
+        "views": 6173,
+        "ageInDays": 3,
+        "viewsPerDay": 1939
+      },
+      {
+        "id": "d6s51fRpoEM",
+        "title": "MANGAS QUE HAN MARCADO MI VIDA 📚✨",
+        "views": 1627,
+        "ageInDays": 1,
+        "viewsPerDay": 1328
+      },
+      {
+        "id": "nKY_In8_CBM",
+        "title": "3 AUTORES DE MANGA que saquen lo que saquen voy a querer leer 📚✨ #manga",
+        "views": 7987,
+        "ageInDays": 7,
+        "viewsPerDay": 1131
+      },
+      {
+        "id": "DY-aQ5JcBmo",
+        "title": "¡Directo! Charlita de chill, chisme y nos ponemos al día ^^ (Sorteo mensual de !subs y miembros)",
+        "views": 629,
+        "ageInDays": 1,
+        "viewsPerDay": 1106
+      },
+      {
+        "id": "zc5m4yuI3-w",
+        "title": "CHAINSAW MAN: arco de REZE... ¿Qué opino?",
+        "views": 4360,
+        "ageInDays": 5,
+        "viewsPerDay": 848
+      },
+      {
+        "id": "0DALNBfbII4",
+        "title": "MI NUEVO TATUAJE 🌸🏮✨",
+        "views": 6457,
+        "ageInDays": 13,
+        "viewsPerDay": 490
+      },
+      {
+        "id": "JvTnSV_pvSY",
+        "title": "¿Prestar o NO tus mangas? 📚",
+        "views": 3670,
+        "ageInDays": 9,
+        "viewsPerDay": 400
+      },
+      {
+        "id": "8at5qjkahGE",
+        "title": "📦 PAPELERÍA JAPONESA, NUEVA EDITORIAL EN UNBOXING Y MUCHO MANGA || ¡Mega Unboxing 81! 📦",
+        "views": 3059,
+        "ageInDays": 8,
+        "viewsPerDay": 374
+      },
+      {
+        "id": "RJmCf-kI_ZU",
+        "title": "UNBOXING DE NOVEDADES 📚 Manga, Manhwa y Danmei",
+        "views": 5516,
+        "ageInDays": 15,
+        "viewsPerDay": 363
+      }
+    ]
+  },
+  "productivity": {
+    "topMonthsByCount": [
+      {
+        "month": "2025-05",
+        "count": 45,
+        "avgViews": 6581,
+        "avgEngagement": 10.83
+      },
+      {
+        "month": "2025-06",
+        "count": 41,
+        "avgViews": 5194,
+        "avgEngagement": 12
+      },
+      {
+        "month": "2025-07",
+        "count": 40,
+        "avgViews": 5710,
+        "avgEngagement": 12.6
+      },
+      {
+        "month": "2022-10",
+        "count": 39,
+        "avgViews": 14726,
+        "avgEngagement": 10.89
+      },
+      {
+        "month": "2025-08",
+        "count": 36,
+        "avgViews": 8875,
+        "avgEngagement": 11.3
+      },
+      {
+        "month": "2025-09",
+        "count": 31,
+        "avgViews": 4772,
+        "avgEngagement": 11.33
+      },
+      {
+        "month": "2022-11",
+        "count": 31,
+        "avgViews": 18755,
+        "avgEngagement": 11.46
+      },
+      {
+        "month": "2022-12",
+        "count": 29,
+        "avgViews": 13030,
+        "avgEngagement": 11.87
+      },
+      {
+        "month": "2025-10",
+        "count": 29,
+        "avgViews": 3650,
+        "avgEngagement": 11.1
+      },
+      {
+        "month": "2024-04",
+        "count": 29,
+        "avgViews": 8386,
+        "avgEngagement": 9.91
+      }
+    ],
+    "topMonthsByEngagement": [
+      {
+        "month": "2019-12",
+        "count": 9,
+        "avgViews": 14607,
+        "avgEngagement": 18.69
+      },
+      {
+        "month": "2025-03",
+        "count": 24,
+        "avgViews": 4885,
+        "avgEngagement": 15.87
+      },
+      {
+        "month": "2017-12",
+        "count": 13,
+        "avgViews": 14296,
+        "avgEngagement": 15.54
+      },
+      {
+        "month": "2018-09",
+        "count": 15,
+        "avgViews": 19695,
+        "avgEngagement": 15.33
+      },
+      {
+        "month": "2024-11",
+        "count": 27,
+        "avgViews": 4395,
+        "avgEngagement": 14.77
+      },
+      {
+        "month": "2018-07",
+        "count": 13,
+        "avgViews": 18103,
+        "avgEngagement": 14.5
+      },
+      {
+        "month": "2024-10",
+        "count": 28,
+        "avgViews": 4718,
+        "avgEngagement": 14.46
+      },
+      {
+        "month": "2017-11",
+        "count": 11,
+        "avgViews": 13637,
+        "avgEngagement": 14.33
+      },
+      {
+        "month": "2025-01",
+        "count": 27,
+        "avgViews": 5243,
+        "avgEngagement": 14.11
+      },
+      {
+        "month": "2025-02",
+        "count": 18,
+        "avgViews": 4876,
+        "avgEngagement": 14.08
       }
     ]
   }

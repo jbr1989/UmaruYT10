@@ -6,7 +6,8 @@ const shuffled = [...messages].sort(() => Math.random() - 0.5);
 <section id="messages">
   <div class="container">
     <h2>Mensajes de los minasansitos</h2>
-    <div class="grid md:grid-cols-2 gap-6" style="align-items: baseline;">
+    <!-- <div class="grid md:grid-cols-2 gap-6" style="align-items: baseline;"> -->
+    <div class="mansonry">
       {
         shuffled.map((msg) => (
           <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_4px_#000]">
@@ -23,5 +24,19 @@ const shuffled = [...messages].sort(() => Math.random() - 0.5);
   #messages {
     display: grid;
     align-items: start;
+  }
+
+  .mansonry > div {
+    margin-bottom: 2rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+  }
+
+  @media (width >= 48rem) {
+    .mansonry {
+      columns: 2;
+    }
   }
 </style>

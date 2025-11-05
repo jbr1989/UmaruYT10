@@ -10,9 +10,8 @@ interface Props {
 const { channel, videos, shorts } = Astro.props;
 
 const totalDuration =
-  channel?.viewCount ??
   videos.reduce((s, v) => s + (v.duration || 0), 0) +
-    shorts.reduce((s, v) => s + (v.duration || 0), 0);
+  shorts.reduce((s, v) => s + (v.duration || 0), 0);
 
 const totalLikes =
   videos.reduce((s, v) => s + v.likes, 0) +
@@ -22,7 +21,7 @@ const totalComments =
   videos.reduce((s, v) => s + v.comments, 0) +
   shorts.reduce((s, v) => s + v.comments, 0);
 
-const subscriberCount = channel?.subscriberCount ?? 0;
+const subscriberCount = channel?.subscriberCount ?? "?";
 
 const yearsActive = (() => {
   try {

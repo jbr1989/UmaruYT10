@@ -50,6 +50,8 @@ import timeline from "../../data/timeline.json";
     }
     .timeline__event__content {
       padding: 20px;
+      display: grid;
+      align-items: center;
     }
     .timeline__event__date {
       /* color: #f6a4ec; */
@@ -78,23 +80,6 @@ import timeline from "../../data/timeline.json";
     .timeline__bg__pink {
       background: #a200ff;
       color: white;
-    }
-    .timeline__event__description {
-      flex-basis: 60%;
-    }
-
-    .timeline__event:last-child:after {
-      content: none;
-    }
-
-    @media (max-width: 786px) {
-      .timeline__event {
-        flex-direction: column;
-      }
-
-      .timeline__event__icon {
-        border-radius: 4px 4px 0 0;
-      }
     }
   </style>
 </section>

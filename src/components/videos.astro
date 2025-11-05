@@ -27,7 +27,7 @@ const topVideosComments = [...videos]
         {
           topVideosViews.map((v) => (
             <a
-              class="border-4 border-black bg-white p-2"
+              class="border-4 border-black bg-white p-2 flex flex-col h-full"
               href={`https://youtu.be/${v.id}`}
               target="_blank"
             >
@@ -36,8 +36,8 @@ const topVideosComments = [...videos]
                 alt={v.title}
                 class="w-full h-40 object-cover mb-2"
               />
-              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
-              <p class="text-xs mt-1">
+              <p class="font-semibold text-sm line-clamp-2 mb-1">{v.title}</p>
+              <p class="text-xs mt-auto">
                 👁 {formatNum(v.views)} ·{" "}
                 {new Date(v.publishedAt).getFullYear()}
               </p>
@@ -53,7 +53,7 @@ const topVideosComments = [...videos]
         {
           topVideosLikes.map((v) => (
             <a
-              class="border-4 border-black bg-white p-2"
+              class="border-4 border-black bg-white p-2 flex flex-col h-full"
               href={`https://youtu.be/${v.id}`}
               target="_blank"
             >
@@ -62,8 +62,8 @@ const topVideosComments = [...videos]
                 alt={v.title}
                 class="w-full h-40 object-cover mb-2"
               />
-              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
-              <p class="text-xs mt-1">
+              <p class="font-semibold text-sm line-clamp-2 mb-1">{v.title}</p>
+              <p class="text-xs mt-auto">
                 👍 {formatNum(v.likes)} ·{" "}
                 {new Date(v.publishedAt).getFullYear()}
               </p>
@@ -79,7 +79,7 @@ const topVideosComments = [...videos]
         {
           topVideosComments.map((v) => (
             <a
-              class="border-4 border-black bg-white p-2"
+              class="border-4 border-black bg-white p-2 flex flex-col h-full"
               href={`https://youtu.be/${v.id}`}
               target="_blank"
             >
@@ -88,8 +88,8 @@ const topVideosComments = [...videos]
                 alt={v.title}
                 class="w-full h-40 object-cover mb-2"
               />
-              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
-              <p class="text-xs mt-1">
+              <p class="font-semibold text-sm line-clamp-2 mb-1">{v.title}</p>
+              <p class="text-xs mt-auto">
                 📜 {formatNum(v.comments)} ·{" "}
                 {new Date(v.publishedAt).getFullYear()}
               </p>
@@ -105,7 +105,7 @@ const topVideosComments = [...videos]
         {
           topVideosDuration.map((v) => (
             <a
-              class="border-4 border-black bg-white p-2"
+              class="border-4 border-black bg-white p-2 flex flex-col h-full"
               href={`https://youtu.be/${v.id}`}
               target="_blank"
             >
@@ -114,8 +114,8 @@ const topVideosComments = [...videos]
                 alt={v.title}
                 class="w-full h-40 object-cover mb-2"
               />
-              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
-              <p class="text-xs mt-1">
+              <p class="font-semibold text-sm line-clamp-2 mb-1">{v.title}</p>
+              <p class="text-xs mt-auto">
                 🕒 {formatDuration(v.duration)} ·{" "}
                 {new Date(v.publishedAt).getFullYear()}
               </p>

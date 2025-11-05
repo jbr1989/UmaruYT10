@@ -12,7 +12,7 @@ import aniversarios from "../data/aniversarios.json";
         {
           aniversarios.map((v) => (
             <a
-              class="border-4 border-black bg-white p-2"
+              class="border-4 border-black bg-white p-2 flex flex-col h-full"
               href={`https://youtu.be/${v.id}`}
               target="_blank"
             >
@@ -21,25 +21,15 @@ import aniversarios from "../data/aniversarios.json";
                 alt={v.title}
                 class="w-full h-40 object-cover mb-2"
               />
-              <p class="font-semibold text-sm line-clamp-2">{v.title}</p>
-              <p class="text-xs mt-1">
+              <p class="font-semibold text-sm line-clamp-2 mb-1">{v.title}</p>
+              <p class="text-xs mt-auto">
                 {new Date(v.publishedAt).getFullYear()}
               </p>
             </a>
           ))
         }
-        <div class="border-4 border-black bg-white p-2">
-          <img
-            src="/img/10.webp"
-            alt="Aniversario 2023"
-            class="h-40 object-cover m-auto"
-            style="filter: blur(1rem);"
-          />
-          <p class="font-semibold text-sm line-clamp-2">10 AÑOS</p>
-          <p class="text-xs mt-1">2025</p>
-        </div>
         <div
-          class="border-4 border-black bg-white p-2"
+          class="border-4 border-black bg-white p-2 flex flex-col h-full"
           style="display: grid;align-content: center;justify-content: center;font-size: 2.5em;"
         >
           y muchos más...

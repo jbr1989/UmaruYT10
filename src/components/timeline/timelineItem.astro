@@ -1,19 +1,13 @@
 ---
-import fs from "fs";
-
 const { t } = Astro.props;
 ---
 
-<div class="timeline__event animated fadeInUp delay-3s timeline__event--type1">
+<div class="timeline__event">
   <div class=`timeline__event__icon timeline__bg__${t.color}`>
-    <!-- <Fragment set:html={svg} /> -->
     <div class="timeline__event__date">{t.year}</div>
   </div>
   <div class="timeline__event__content">
     <div class="timeline__event__title">{t.text}</div>
-    <div class="timeline__event__description">
-      <p></p>
-    </div>
   </div>
   <div
     style="display:grid;background:black;align-content: center; cursor: pointer;"

@@ -11,7 +11,13 @@ const shuffled = [...messages].sort(() => Math.random() - 0.5);
       {
         shuffled.map((msg) => (
           <div class="border-4 border-black bg-white p-4 italic shadow-[4px_4px_4px_#000]">
-            <p class="mb-2" set:html={`“ ${msg.text} ”`} />
+            {String("“ " + msg.text + " ”")
+              .split(/\r?\n+/)
+              .map((line) => line.trim())
+              .filter(Boolean)
+              .map((line) => (
+                <p class="mb-2">{line}</p>
+              ))}
             <p class="text-right font-bold mt-auto">— {msg.name}</p>
           </div>
         ))
